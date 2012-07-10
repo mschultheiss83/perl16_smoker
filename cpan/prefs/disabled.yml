@@ -28,3 +28,8 @@ comment: "tapper doesn't work on anything but linux and the maintainers don't kn
 match:
  distribution: "/Tapper-"
 disabled: 1
+---
+comment: "PJFL will happily force his tests to pass on win32 by skipping everything, esp. in File::DataClass, so any time spent on these dists is wasted"
+match:
+    distribution: "^PJFL/"
+disabled: 1
