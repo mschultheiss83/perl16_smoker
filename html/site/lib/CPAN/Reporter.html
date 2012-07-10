@@ -1,0 +1,228 @@
+<?xml version="1.0" ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<!-- saved from url=(0017)http://localhost/ -->
+<script language="JavaScript" src="../../../displayToc.js"></script>
+<script language="JavaScript" src="../../../tocParas.js"></script>
+<script language="JavaScript" src="../../../tocTab.js"></script>
+<link rel="stylesheet" type="text/css" href="../../../scineplex.css">
+<title></title>
+<link rel="stylesheet" href="../../../Active.css" type="text/css" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rev="made" href="mailto:" />
+</head>
+
+<body>
+
+
+
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#VERSION">VERSION</a></li>
+  <li><a href="#SYNOPSIS">SYNOPSIS</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
+  <li><a href="#GETTING-STARTED">GETTING STARTED</a>
+    <ul>
+      <li><a href="#Installation">Installation</a></li>
+      <li><a href="#Configuration">Configuration</a>
+        <ul>
+          <li><a href="#The-Metabase">The Metabase</a></li>
+        </ul>
+      </li>
+      <li><a href="#Using-CPAN::Reporter">Using CPAN::Reporter</a></li>
+    </ul>
+  </li>
+  <li><a href="#UNDERSTANDING-TEST-GRADES">UNDERSTANDING TEST GRADES</a></li>
+  <li><a href="#PRIVACY-WARNING">PRIVACY WARNING</a></li>
+  <li><a href="#BUGS">BUGS</a></li>
+  <li><a href="#SEE-ALSO">SEE ALSO</a></li>
+  <li><a href="#SUPPORT">SUPPORT</a>
+    <ul>
+      <li><a href="#Bugs-Feature-Requests">Bugs / Feature Requests</a></li>
+      <li><a href="#Source-Code">Source Code</a></li>
+    </ul>
+  </li>
+  <li><a href="#AUTHOR">AUTHOR</a></li>
+  <li><a href="#COPYRIGHT-AND-LICENSE">COPYRIGHT AND LICENSE</a></li>
+</ul>
+
+<h1 id="NAME">NAME</h1>
+
+<p>CPAN::Reporter - Adds CPAN Testers reporting to CPAN.pm</p>
+
+<h1 id="VERSION">VERSION</h1>
+
+<p>version 1.2006</p>
+
+<h1 id="SYNOPSIS">SYNOPSIS</h1>
+
+<p>From the CPAN shell:</p>
+
+<pre><code>  cpan&gt; install Task::CPAN::Reporter
+  cpan&gt; reload cpan
+  cpan&gt; o conf init test_report</code></pre>
+
+<p>Installing <a>Task::CPAN::Reporter</a> will pull in additional dependencies that new CPAN Testers will need.</p>
+
+<p>Advanced CPAN Testers with custom <a href="../../../site/lib/Test/Reporter/Transport.html">Test::Reporter::Transport</a> setups may wish to install only CPAN::Reporter, which has fewer dependencies.</p>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
+<p>The CPAN Testers project captures and analyzes detailed results from building and testing CPAN distributions on multiple operating systems and multiple versions of Perl. This provides valuable feedback to module authors and potential users to identify bugs or platform compatibility issues and improves the overall quality and value of CPAN.</p>
+
+<p>One way individuals can contribute is to send a report for each module that they test or install. CPAN::Reporter is an add-on for the CPAN.pm module to send the results of building and testing modules to the CPAN Testers project. Full support for CPAN::Reporter is available in CPAN.pm as of version 1.92.</p>
+
+<h1 id="GETTING-STARTED">GETTING STARTED</h1>
+
+<h2 id="Installation">Installation</h2>
+
+<p>The first step in using CPAN::Reporter is to install it using whatever version of CPAN.pm is already installed. CPAN.pm will be upgraded as a dependency if necessary.</p>
+
+<pre><code>  cpan&gt; install CPAN::Reporter</code></pre>
+
+<p>If CPAN.pm was upgraded, it needs to be reloaded.</p>
+
+<pre><code>  cpan&gt; reload cpan</code></pre>
+
+<h2 id="Configuration">Configuration</h2>
+
+<p>If upgrading from a very old version of CPAN.pm, users may be prompted to renew their configuration settings, including the &#39;test_report&#39; option to enable CPAN::Reporter.</p>
+
+<p>If not prompted automatically, users should manually initialize CPAN::Reporter support. After enabling CPAN::Reporter, CPAN.pm will automatically continue with interactive configuration of CPAN::Reporter options.</p>
+
+<pre><code>  cpan&gt; o conf init test_report</code></pre>
+
+<p>Users will need to enter an email address in one of the following formats:</p>
+
+<pre><code>  johndoe@example.com
+  John Doe &lt;johndoe@example.com&gt;
+  &quot;John Q. Public&quot; &lt;johnqpublic@example.com&gt;</code></pre>
+
+<p>Users that are new to CPAN::Reporter should accept the recommended values for other configuration options.</p>
+
+<p>Users will be prompted to create a <i>Metabase profile</i> file that uniquely identifies their test reports. See <a href="#The-Metabase">&quot;The Metabase&quot;</a> below for details.</p>
+
+<p>After completing interactive configuration, be sure to commit (save) the CPAN configuration changes.</p>
+
+<pre><code>  cpan&gt; o conf commit</code></pre>
+
+<p>See <a href="../../../cpan/build/CPAN-Reporter-1.2006-wXxjnP/blib/lib/CPAN/Reporter/Config.html">CPAN::Reporter::Config</a> for advanced configuration settings.</p>
+
+<h3 id="The-Metabase">The Metabase</h3>
+
+<p>CPAN::Reporter sends test reports to a server known as the Metabase. This requires an active Internet connection and a profile file. To create the profile, users will need to run <code>metabase-profile</code> from a terminal window and fill the information at the prompts. This will create a file called <code>metabase_id.json</code> in the current directory. That file should be moved to the <code>.cpanreporter</code> directory inside the user&#39;s home directory.</p>
+
+<p>Users with an existing metabase profile file (e.g. from another machine), should copy it into the <code>.cpanreporter</code> directory instead of creating a new one. Profile files may be located outside the <code>.cpanreporter</code> directory by following instructions in <a href="../../../cpan/build/CPAN-Reporter-1.2006-wXxjnP/blib/lib/CPAN/Reporter/Config.html">CPAN::Reporter::Config</a>.</p>
+
+<h2 id="Using-CPAN::Reporter">Using CPAN::Reporter</h2>
+
+<p>Once CPAN::Reporter is enabled and configured, test or install modules with CPAN.pm as usual.</p>
+
+<p>For example, to test the File::Marker module:</p>
+
+<pre><code>  cpan&gt; test File::Marker</code></pre>
+
+<p>If a distribution&#39;s tests fail, users will be prompted to edit the report to add additional information that might help the author understand the failure.</p>
+
+<h1 id="UNDERSTANDING-TEST-GRADES">UNDERSTANDING TEST GRADES</h1>
+
+<p>CPAN::Reporter will assign one of the following grades to the report:</p>
+
+<ul>
+
+<li><p><code>pass</code> -- distribution built and tested correctly</p>
+
+</li>
+<li><p><code>fail</code> -- distribution failed to test correctly</p>
+
+</li>
+<li><p><code>unknown</code> -- distribution failed to build, had no test suite or outcome was inconclusive</p>
+
+</li>
+<li><p><code>na</code> --- distribution is not applicable to this platform and/or version of Perl</p>
+
+</li>
+</ul>
+
+<p>In returning results of the test suite to CPAN.pm, &quot;pass&quot; and &quot;unknown&quot; are considered successful attempts to &quot;make test&quot; or &quot;Build test&quot; and will not prevent installation. &quot;fail&quot; and &quot;na&quot; are considered to be failures and CPAN.pm will not install unless forced.</p>
+
+<p>An error from Makefile.PL/Build.PL or make/Build will also be graded as &quot;unknown&quot; and a failure will be signaled to CPAN.pm.</p>
+
+<p>If prerequisites specified in <code>Makefile.PL</code> or <code>Build.PL</code> are not available, no report will be generated and a failure will be signaled to CPAN.pm.</p>
+
+<h1 id="PRIVACY-WARNING">PRIVACY WARNING</h1>
+
+<p>CPAN::Reporter includes information in the test report about environment variables and special Perl variables that could be affecting test results in order to help module authors interpret the results of the tests. This includes information about paths, terminal, locale, user/group ID, installed toolchain modules (e.g. ExtUtils::MakeMaker) and so on.</p>
+
+<p>These have been intentionally limited to items that should not cause harmful personal information to be revealed -- it does <i>not</i> include your entire environment. Nevertheless, please do not use CPAN::Reporter if you are concerned about the disclosure of this information as part of your test report.</p>
+
+<p>Users wishing to review this information may choose to edit the report prior to sending it.</p>
+
+<h1 id="BUGS">BUGS</h1>
+
+<p>Please report any bugs or feature using the CPAN Request Tracker. Bugs can be submitted through the web interface at <a href="http://rt.cpan.org/Dist/Display.html?Queue=CPAN-Reporter">http://rt.cpan.org/Dist/Display.html?Queue=CPAN-Reporter</a></p>
+
+<p>When submitting a bug or request, please include a test-file or a patch to an existing test-file that illustrates the bug or desired feature.</p>
+
+<h1 id="SEE-ALSO">SEE ALSO</h1>
+
+<p>Information about CPAN::Testers:</p>
+
+<ul>
+
+<li><p><a>CPAN::Testers</a> -- overview of CPAN Testers architecture stack</p>
+
+</li>
+<li><p><a href="http://www.cpantesters.org">http://www.cpantesters.org</a> -- project home with all reports</p>
+
+</li>
+<li><p><a href="http://wiki.cpantesters.org">http://wiki.cpantesters.org</a> -- documentation and wiki</p>
+
+</li>
+</ul>
+
+<p>Additional Documentation:</p>
+
+<ul>
+
+<li><p><a href="../../../cpan/build/CPAN-Reporter-1.2006-wXxjnP/blib/lib/CPAN/Reporter/Config.html">CPAN::Reporter::Config</a> -- advanced configuration settings</p>
+
+</li>
+<li><p><a href="../../../cpan/build/CPAN-Reporter-1.2006-wXxjnP/blib/lib/CPAN/Reporter/FAQ.html">CPAN::Reporter::FAQ</a> -- hints and tips</p>
+
+</li>
+</ul>
+
+<h1 id="SUPPORT">SUPPORT</h1>
+
+<h2 id="Bugs-Feature-Requests">Bugs / Feature Requests</h2>
+
+<p>Please report any bugs or feature requests through the issue tracker at <a href="http://rt.cpan.org/Public/Dist/Display.html?Name=CPAN-Reporter">http://rt.cpan.org/Public/Dist/Display.html?Name=CPAN-Reporter</a>. You will be notified automatically of any progress on your issue.</p>
+
+<h2 id="Source-Code">Source Code</h2>
+
+<p>This is open source software. The code repository is available for public review and contribution under the terms of the license.</p>
+
+<p><a href="https://github.com/dagolden/cpan-reporter">https://github.com/dagolden/cpan-reporter</a></p>
+
+<pre><code>  git clone https://github.com/dagolden/cpan-reporter.git</code></pre>
+
+<h1 id="AUTHOR">AUTHOR</h1>
+
+<p>David Golden &lt;dagolden@cpan.org&gt;</p>
+
+<h1 id="COPYRIGHT-AND-LICENSE">COPYRIGHT AND LICENSE</h1>
+
+<p>This software is Copyright (c) 2006 by David Golden.</p>
+
+<p>This is free software, licensed under:</p>
+
+<pre><code>  The Apache License, Version 2.0, January 2004</code></pre>
+
+
+</body>
+
+</html>
+
+

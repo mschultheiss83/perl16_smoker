@@ -1,0 +1,122 @@
+<?xml version="1.0" ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<!-- saved from url=(0017)http://localhost/ -->
+<script language="JavaScript" src="../displayToc.js"></script>
+<script language="JavaScript" src="../tocParas.js"></script>
+<script language="JavaScript" src="../tocTab.js"></script>
+<link rel="stylesheet" type="text/css" href="../scineplex.css">
+<title></title>
+<link rel="stylesheet" href="../Active.css" type="text/css" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rev="made" href="mailto:" />
+</head>
+
+<body>
+
+
+
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a>
+    <ul>
+      <li><a href="#Common-options">Common options</a></li>
+      <li><a href="#Indexing-options">Indexing options</a></li>
+      <li><a href="#Querying-options">Querying options</a></li>
+    </ul>
+  </li>
+  <li><a href="#SEE-ALSO">SEE ALSO</a></li>
+</ul>
+
+<h1 id="NAME">NAME</h1>
+
+<p>cpandb - interface to <code>CPAN::SQLite</code></p>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
+<p>This script is an interface to the routines of <a href="../cpan/build/CPAN-SQLite-0.202-YFPAex/blib/lib/CPAN/SQLite.html">CPAN::SQLite</a> for setting up, maintaining and searching a <code>DBD::SQLite</code> database of CPAN. Available options can be grouped into three categories.</p>
+
+<h2 id="Common-options">Common options</h2>
+
+<p>These are options which are common to both setting up and maintaining the database or performing queries on it. These are</p>
+
+<ul>
+
+<li><p><code>--CPAN &#39;/path/to/CPAN&#39;</code></p>
+
+<p>This specifies the path to where the index files are to be stored. This could be a local CPAN mirror, defined here by the presence of a <i>MIRRORED.BY</i> file beneath this directory, or a local directory in which to store these files from a remote CPAN mirror. In the latter case, the index files are fetched from a remote CPAN mirror, using the same list that <code>CPAN.pm</code> uses, if this is configured, and are updated if they are more than one day old.</p>
+
+<p>If the <code>CPAN</code> option is not given, it will default to <code>cpan_home</code> of <a>CPAN::</a>, if this is configured, with the sources being found under <code>keep_source_where</code>. A fatal error results if such a directory isn&#39;t found. Updates to these index files are assumed here to be handled by <code>CPAN.pm</code>.</p>
+
+</li>
+<li><p><code>--db_name &#39;cpan-sqlite&#39;</code></p>
+
+<p>This is the name of the database that <code>DBD::SQLite</code> will use. If not given, this defaults to <code>cpandb-sqlite</code>.</p>
+
+</li>
+<li><p><code>--db_dir &#39;/path/to/db/dir&#39;</code></p>
+
+<p>This specifies the path to where the database file is found. If not given, it defaults to the <code>cpan_home</code> directory of <code>CPAN.pm</code>, if present, or to the directory in which the script was invoked.</p>
+
+</li>
+</ul>
+
+<h2 id="Indexing-options">Indexing options</h2>
+
+<p>These are options which are used for setting up and maintaining the database. These include</p>
+
+<ul>
+
+<li><p><code>--setup</code></p>
+
+<p>This specifies that the database is to be created and populated from the CPAN indices; any exisiting database will be overwritten.</p>
+
+</li>
+<li><p><code>--update</code></p>
+
+<p>This is used to update an exisiting database, which must have first been created with the <code>setup</code> option.</p>
+
+</li>
+<li><p><code>--reindex &#39;dist_name&#39;</code></p>
+
+<p>This specifies that the CPAN distribution <code>dist_name</code> is to be reindexed.</p>
+
+</li>
+</ul>
+
+<h2 id="Querying-options">Querying options</h2>
+
+<p>These options are used to query the database. Available options are</p>
+
+<ul>
+
+<li><p><code>--module Mod::Name</code></p>
+
+<p>This provides information on the specified module name.</p>
+
+</li>
+<li><p><code>--dist Dist-Name</code></p>
+
+<p>This provides information on the specified distribution name.</p>
+
+</li>
+<li><p><code>--cpanid CPANID</code></p>
+
+<p>This provides information on the specified CPAN author id</p>
+
+</li>
+</ul>
+
+<p>All search terms are assumed to be exact matches in a case-insensitive manner.</p>
+
+<h1 id="SEE-ALSO">SEE ALSO</h1>
+
+<p><a href="../cpan/build/CPAN-SQLite-0.202-YFPAex/blib/lib/CPAN/SQLite.html">CPAN::SQLite</a>.</p>
+
+
+</body>
+
+</html>
+
+

@@ -1,0 +1,372 @@
+<?xml version="1.0" ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<!-- saved from url=(0017)http://localhost/ -->
+<script language="JavaScript" src="../../../displayToc.js"></script>
+<script language="JavaScript" src="../../../tocParas.js"></script>
+<script language="JavaScript" src="../../../tocTab.js"></script>
+<link rel="stylesheet" type="text/css" href="../../../scineplex.css">
+<title></title>
+<link rel="stylesheet" href="../../../Active.css" type="text/css" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rev="made" href="mailto:" />
+</head>
+
+<body>
+
+
+
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#VERSION">VERSION</a></li>
+  <li><a href="#SYNOPSIS">SYNOPSIS</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a>
+    <ul>
+      <li><a href="#Transport-mechanism">Transport mechanism</a></li>
+    </ul>
+  </li>
+  <li><a href="#ATTRIBUTES">ATTRIBUTES</a>
+    <ul>
+      <li><a href="#Required-attributes">Required attributes</a></li>
+      <li><a href="#Transport-attributes">Transport attributes</a></li>
+      <li><a href="#Optional-attributes">Optional attributes</a></li>
+      <li><a href="#Deprecated-attributes">Deprecated attributes</a></li>
+    </ul>
+  </li>
+  <li><a href="#METHODS">METHODS</a>
+    <ul>
+      <li><a href="#Deprecated-methods">Deprecated methods</a></li>
+    </ul>
+  </li>
+  <li><a href="#CAVEATS">CAVEATS</a></li>
+  <li><a href="#SEE-ALSO">SEE ALSO</a></li>
+  <li><a href="#SUPPORT">SUPPORT</a>
+    <ul>
+      <li><a href="#Bugs-Feature-Requests">Bugs / Feature Requests</a></li>
+      <li><a href="#Source-Code">Source Code</a></li>
+    </ul>
+  </li>
+  <li><a href="#AUTHORS">AUTHORS</a></li>
+  <li><a href="#COPYRIGHT-AND-LICENSE">COPYRIGHT AND LICENSE</a></li>
+</ul>
+
+<h1 id="NAME">NAME</h1>
+
+<p>Test::Reporter - sends test results to cpan-testers@perl.org</p>
+
+<h1 id="VERSION">VERSION</h1>
+
+<p>version 1.58</p>
+
+<h1 id="SYNOPSIS">SYNOPSIS</h1>
+
+<pre><code>  <span class="keyword">use</span> <span class="variable">Test::Reporter</span><span class="operator">;</span>
+  
+  <span class="keyword">my</span> <span class="variable">$reporter</span> <span class="operator">=</span> <span class="variable">Test::Reporter</span><span class="operator">-&gt;</span><span class="variable">new</span><span class="operator">(</span>
+      <span class="string">transport</span> <span class="operator">=&gt;</span> <span class="string">'File'</span><span class="operator">,</span>
+      <span class="string">transport_args</span> <span class="operator">=&gt;</span> <span class="operator">[</span> <span class="string">dir</span> <span class="operator">=&gt;</span> <span class="string">'/tmp'</span> <span class="operator">]</span><span class="operator">,</span>
+  <span class="operator">);</span>
+  
+  <span class="variable">$reporter</span><span class="operator">-&gt;</span><span class="variable">grade</span><span class="operator">(</span><span class="string">'pass'</span><span class="operator">);</span>
+  <span class="variable">$reporter</span><span class="operator">-&gt;</span><span class="variable">distribution</span><span class="operator">(</span><span class="string">'Mail-Freshmeat-1.20'</span><span class="operator">);</span>
+  <span class="variable">$reporter</span><span class="operator">-&gt;</span><span class="variable">send</span><span class="operator">()</span> <span class="operator">||</span> <span class="keyword">die</span> <span class="variable">$reporter</span><span class="operator">-&gt;</span><span class="variable">errstr</span><span class="operator">();</span>
+  
+  <span class="comment"># or</span>
+  
+  <span class="keyword">my</span> <span class="variable">$reporter</span> <span class="operator">=</span> <span class="variable">Test::Reporter</span><span class="operator">-&gt;</span><span class="variable">new</span><span class="operator">(</span>
+      <span class="string">transport</span> <span class="operator">=&gt;</span> <span class="string">'File'</span><span class="operator">,</span>
+      <span class="string">transport_args</span> <span class="operator">=&gt;</span> <span class="operator">[</span> <span class="string">dir</span> <span class="operator">=&gt;</span> <span class="string">'/tmp'</span> <span class="operator">]</span><span class="operator">,</span>
+  <span class="operator">);</span>
+  
+  <span class="variable">$reporter</span><span class="operator">-&gt;</span><span class="variable">grade</span><span class="operator">(</span><span class="string">'fail'</span><span class="operator">);</span>
+  <span class="variable">$reporter</span><span class="operator">-&gt;</span><span class="variable">distribution</span><span class="operator">(</span><span class="string">'Mail-Freshmeat-1.20'</span><span class="operator">);</span>
+  <span class="variable">$reporter</span><span class="operator">-&gt;</span><span class="variable">comments</span><span class="operator">(</span><span class="string">'output of a failed make test goes here...'</span><span class="operator">);</span>
+  <span class="variable">$reporter</span><span class="operator">-&gt;</span><span class="variable">edit_comments</span><span class="operator">();</span> <span class="comment"># if you want to edit comments in an editor</span>
+  <span class="variable">$reporter</span><span class="operator">-&gt;</span><span class="variable">send</span><span class="operator">()</span> <span class="operator">||</span> <span class="keyword">die</span> <span class="variable">$reporter</span><span class="operator">-&gt;</span><span class="variable">errstr</span><span class="operator">();</span>
+  
+  <span class="comment"># or</span>
+  
+  <span class="keyword">my</span> <span class="variable">$reporter</span> <span class="operator">=</span> <span class="variable">Test::Reporter</span><span class="operator">-&gt;</span><span class="variable">new</span><span class="operator">(</span>
+      <span class="string">transport</span> <span class="operator">=&gt;</span> <span class="string">'File'</span><span class="operator">,</span>
+      <span class="string">transport_args</span> <span class="operator">=&gt;</span> <span class="operator">[</span> <span class="string">dir</span> <span class="operator">=&gt;</span> <span class="string">'/tmp'</span> <span class="operator">]</span><span class="operator">,</span>
+      <span class="string">grade</span> <span class="operator">=&gt;</span> <span class="string">'fail'</span><span class="operator">,</span>
+      <span class="string">distribution</span> <span class="operator">=&gt;</span> <span class="string">'Mail-Freshmeat-1.20'</span><span class="operator">,</span>
+      <span class="string">from</span> <span class="operator">=&gt;</span> <span class="string">'whoever@wherever.net (Whoever Wherever)'</span><span class="operator">,</span>
+      <span class="string">comments</span> <span class="operator">=&gt;</span> <span class="string">'output of a failed make test goes here...'</span><span class="operator">,</span>
+      <span class="string">via</span> <span class="operator">=&gt;</span> <span class="string">'CPANPLUS X.Y.Z'</span><span class="operator">,</span>
+  <span class="operator">);</span>
+  <span class="variable">$reporter</span><span class="operator">-&gt;</span><span class="variable">send</span><span class="operator">()</span> <span class="operator">||</span> <span class="keyword">die</span> <span class="variable">$reporter</span><span class="operator">-&gt;</span><span class="variable">errstr</span><span class="operator">();</span>
+</code></pre>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
+<p>Test::Reporter reports the test results of any given distribution to the CPAN Testers project. Test::Reporter has wide support for various perl5&#39;s and platforms.</p>
+
+<p>CPAN Testers no longer receives test reports by email, but reports still resemble an email message. This module has numerous legacy &quot;features&quot; left over from the days of email transport.</p>
+
+<h2 id="Transport-mechanism">Transport mechanism</h2>
+
+<p>The choice of transport is set with the <code>transport</code> argument. CPAN Testers should usually install <a>Test::Reporter::Transport::Metabase</a> and use &#39;Metabase&#39; as the <code>transport</code>. See that module for necessary transport arguments. Advanced testers may wish to test on a machine different from the one used to send reports. Consult the <a href="http://wiki.cpantesters.org/">CPAN Testers Wiki</a> for examples using other transport classes.</p>
+
+<p>The legacy email-based transports have been split out into a separate <a>Test::Reporter::Transport::Legacy</a> distribution and methods solely related to email have been deprecated.</p>
+
+<h1 id="ATTRIBUTES">ATTRIBUTES</h1>
+
+<h2 id="Required-attributes">Required attributes</h2>
+
+<ul>
+
+<li><p><b>distribution</b></p>
+
+<p>Gets or sets the name of the distribution you&#39;re working on, for example Foo-Bar-0.01. There are no restrictions on what can be put here.</p>
+
+</li>
+<li><p><b>from</b></p>
+
+<p>Gets or sets the e-mail address of the individual submitting the test report, i.e. &quot;John Doe &lt;jdoe@example.com&gt;&quot;.</p>
+
+</li>
+<li><p><b>grade</b></p>
+
+<p>Gets or sets the success or failure of the distributions&#39;s &#39;make test&#39; result. This must be one of:</p>
+
+<pre><code>  grade     meaning
+  -----     -------
+  pass      all tests passed
+  fail      one or more tests failed
+  na        distribution will not work on this platform
+  unknown   tests did not exist or could not be run</code></pre>
+
+</li>
+</ul>
+
+<h2 id="Transport-attributes">Transport attributes</h2>
+
+<ul>
+
+<li><p><b>transport</b></p>
+
+<p>Gets or sets the transport type. The transport type argument is refers to a &#39;Test::Reporter::Transport&#39; subclass. The default is &#39;Null&#39;, which uses the <a href="../../../cpan/build/Test-Reporter-1.58-l_bu1B/blib/lib/Test/Reporter/Transport/Null.html">Test::Reporter::Transport::Null</a> class and does nothing when <code>send</code> is called.</p>
+
+<p>You can add additional arguments after the transport selection. These will be passed to the constructor of the lower-level transport. See <code>transport_args</code>.</p>
+
+<pre><code> <span class="variable">$reporter</span><span class="operator">-&gt;</span><span class="variable">transport</span><span class="operator">(</span>
+     <span class="string">'File'</span><span class="operator">,</span> <span class="string">dir</span> <span class="operator">=&gt;</span> <span class="string">'/tmp'</span>
+ <span class="operator">);</span>
+</code></pre>
+
+<p>This is not designed to be an extensible platform upon which to build transport plugins. That functionality is planned for the next-generation release of Test::Reporter, which will reside in the CPAN::Testers namespace.</p>
+
+</li>
+<li><p><b>transport_args</b></p>
+
+<p>Optional. Gets or sets transport arguments that will used in the constructor for the selected transport, as appropriate.</p>
+
+</li>
+</ul>
+
+<h2 id="Optional-attributes">Optional attributes</h2>
+
+<ul>
+
+<li><p><b>comments</b></p>
+
+<p>Gets or sets the comments on the test report. This is most commonly used for distributions that did not pass a &#39;make test&#39;.</p>
+
+</li>
+<li><p><b>debug</b></p>
+
+<p>Gets or sets the value that will turn debugging on or off. Debug messages are sent to STDERR. 1 for on, 0 for off. Debugging generates very verbose output and is useful mainly for finding bugs in Test::Reporter itself.</p>
+
+</li>
+<li><p><b>dir</b></p>
+
+<p>Defaults to the current working directory. This method specifies the directory that write() writes test report files to.</p>
+
+</li>
+<li><p><b>timeout</b></p>
+
+<p>Gets or sets the timeout value for the submission of test reports. Default is 120 seconds.</p>
+
+</li>
+<li><p><b>via</b></p>
+
+<p>Gets or sets the value that will be appended to X-Reported-Via, generally this is useful for distributions that use Test::Reporter to report test results. This would be something like &quot;CPANPLUS 0.036&quot;.</p>
+
+</li>
+</ul>
+
+<h2 id="Deprecated-attributes">Deprecated attributes</h2>
+
+<p>CPAN Testers no longer uses email for submitting reports. These attributes are deprecated.</p>
+
+<ul>
+
+<li><p><b>address</b></p>
+
+</li>
+<li><p><b>mail_send_args</b></p>
+
+</li>
+<li><p><b>mx</b></p>
+
+</li>
+</ul>
+
+<h1 id="METHODS">METHODS</h1>
+
+<ul>
+
+<li><p><b>new</b></p>
+
+<p>This constructor returns a Test::Reporter object.</p>
+
+</li>
+<li><p><b>perl_version</b></p>
+
+<p>Returns a hashref containing _archname, _osvers, and _myconfig based upon the perl that you are using. Alternatively, you may supply a different perl (path to the binary) as an argument, in which case the supplied perl will be used as the basis of the above data.</p>
+
+</li>
+<li><p><b>subject</b></p>
+
+<p>Returns the subject line of a report, i.e. &quot;PASS Mail-Freshmeat-1.20 Darwin 6.0&quot;. &#39;grade&#39; and &#39;distribution&#39; must first be specified before calling this method.</p>
+
+</li>
+<li><p><b>report</b></p>
+
+<p>Returns the actual content of a report, i.e. &quot;This distribution has been tested as part of the cpan-testers...&quot;. &#39;comments&#39; must first be specified before calling this method, if you have comments to make and expect them to be included in the report.</p>
+
+</li>
+<li><p><b>send</b></p>
+
+<p>Sends the test report to cpan-testers@perl.org via the defined <code>transport</code> mechanism. You must check errstr() on a send() in order to be guaranteed delivery.</p>
+
+</li>
+<li><p><b>edit_comments</b></p>
+
+<p>Allows one to interactively edit the comments within a text editor. comments() doesn&#39;t have to be first specified, but it will work properly if it was. Accepts an optional hash of arguments:</p>
+
+<ul>
+
+<li><p><b>suffix</b></p>
+
+<p>Optional. Allows one to specify the suffix (&quot;extension&quot;) of the temp file used by <b>edit_comments</b>. Defaults to &#39;.txt&#39;.</p>
+
+</li>
+</ul>
+
+</li>
+<li><p><b>errstr</b></p>
+
+<p>Returns an error message describing why something failed. You must check errstr() on a send() in order to be guaranteed delivery.</p>
+
+</li>
+<li><p><b>write and read</b></p>
+
+<p>These methods are used in situations where you wish to save reports locally rather than transmitting them to CPAN Testers immediately. You use write() on the machine that you are testing from, transfer the written test reports from the testing machine to the sending machine, and use read() on the machine that you actually want to submit the reports from. write() will write a file in an internal format that contains &#39;From&#39;, &#39;Subject&#39;, and the content of the report. The filename will be represented as: grade.distribution.archname.osvers.seconds_since_epoch.pid.rpt. write() uses the value of dir() if it was specified, else the cwd.</p>
+
+<p>On the machine you are testing from:</p>
+
+<pre><code>  <span class="keyword">my</span> <span class="variable">$reporter</span> <span class="operator">=</span> <span class="variable">Test::Reporter</span><span class="operator">-&gt;</span><span class="variable">new</span>
+  <span class="operator">(</span>
+    <span class="string">grade</span> <span class="operator">=&gt;</span> <span class="string">'pass'</span><span class="operator">,</span>
+    <span class="string">distribution</span> <span class="operator">=&gt;</span> <span class="string">'Test-Reporter-1.16'</span><span class="operator">,</span>
+  <span class="operator">)-&gt;</span><span class="variable">write</span><span class="operator">();</span>
+</code></pre>
+
+<p>On the machine you are submitting from:</p>
+
+<pre><code>  <span class="comment"># wrap in an opendir if you've a lot to submit</span>
+  <span class="keyword">my</span> <span class="variable">$reporter</span><span class="operator">;</span>
+  <span class="variable">$reporter</span> <span class="operator">=</span> <span class="variable">Test::Reporter</span><span class="operator">-&gt;</span><span class="variable">new</span><span class="operator">()-&gt;</span><span class="variable">read</span><span class="operator">(</span>
+    <span class="string">'pass.Test-Reporter-1.16.i686-linux.2.2.16.1046685296.14961.rpt'</span>
+  <span class="operator">)-&gt;</span><span class="variable">send</span><span class="operator">()</span> <span class="operator">||</span> <span class="keyword">die</span> <span class="variable">$reporter</span><span class="operator">-&gt;</span><span class="variable">errstr</span><span class="operator">();</span>
+</code></pre>
+
+<p>write() also accepts an optional filehandle argument:</p>
+
+<pre><code>  <span class="keyword">my</span> <span class="variable">$fh</span><span class="operator">;</span> <span class="keyword">open</span> <span class="variable">$fh</span><span class="operator">,</span> <span class="string">'&gt;-'</span><span class="operator">;</span>  <span class="comment"># create a STDOUT filehandle object</span>
+  <span class="variable">$reporter</span><span class="operator">-&gt;</span><span class="variable">write</span><span class="operator">(</span><span class="variable">$fh</span><span class="operator">);</span>   <span class="comment"># prints the report to STDOUT</span>
+</code></pre>
+
+</li>
+</ul>
+
+<h2 id="Deprecated-methods">Deprecated methods</h2>
+
+<ul>
+
+<li><p><b>message_id</b></p>
+
+</li>
+</ul>
+
+<h1 id="CAVEATS">CAVEATS</h1>
+
+<p>If you experience a long delay sending reports with Test::Reporter, you may be experiencing a wait as Test::Reporter attempts to determine your email address. Always use the <code>from</code> parameter to set your email address explicitly.</p>
+
+<h1 id="SEE-ALSO">SEE ALSO</h1>
+
+<p>For more about CPAN Testers:</p>
+
+<ul>
+
+<li><p><a href="http://www.cpantesters.org/">CPAN Testers reports</a></p>
+
+</li>
+<li><p><a href="http://wiki.cpantesters.org/">CPAN Testers wiki</a></p>
+
+</li>
+</ul>
+
+<h1 id="SUPPORT">SUPPORT</h1>
+
+<h2 id="Bugs-Feature-Requests">Bugs / Feature Requests</h2>
+
+<p>Please report any bugs or feature requests by email to <code>bug-test-reporter at rt.cpan.org</code>, or through the web interface at <a href="http://rt.cpan.org/Public/Dist/Display.html?Name=Test-Reporter">http://rt.cpan.org/Public/Dist/Display.html?Name=Test-Reporter</a>. You will be automatically notified of any progress on the request by the system.</p>
+
+<h2 id="Source-Code">Source Code</h2>
+
+<p>This is open source software. The code repository is available for public review and contribution under the terms of the license.</p>
+
+<p><a href="http://github.com/dagolden/test-reporter">http://github.com/dagolden/test-reporter</a></p>
+
+<pre><code>  git clone http://github.com/dagolden/test-reporter</code></pre>
+
+<h1 id="AUTHORS">AUTHORS</h1>
+
+<ul>
+
+<li><p>Adam J. Foxson &lt;afoxson@pobox.com&gt;</p>
+
+</li>
+<li><p>David Golden &lt;dagolden@cpan.org&gt;</p>
+
+</li>
+<li><p>Kirrily &quot;Skud&quot; Robert &lt;skud@cpan.org&gt;</p>
+
+</li>
+<li><p>Ricardo Signes &lt;rjbs@cpan.org&gt;</p>
+
+</li>
+<li><p>Richard Soderberg &lt;rsod@cpan.org&gt;</p>
+
+</li>
+<li><p>Kurt Starsinic &lt;Kurt.Starsinic@isinet.com&gt;</p>
+
+</li>
+</ul>
+
+<h1 id="COPYRIGHT-AND-LICENSE">COPYRIGHT AND LICENSE</h1>
+
+<p>This software is copyright (c) 2011 by Authors and Contributors.</p>
+
+<p>This is free software; you can redistribute it and/or modify it under the same terms as the Perl 5 programming language system itself.</p>
+
+
+</body>
+
+</html>
+
+

@@ -1,0 +1,233 @@
+<?xml version="1.0" ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<!-- saved from url=(0017)http://localhost/ -->
+<script language="JavaScript" src="../../../displayToc.js"></script>
+<script language="JavaScript" src="../../../tocParas.js"></script>
+<script language="JavaScript" src="../../../tocTab.js"></script>
+<link rel="stylesheet" type="text/css" href="../../../scineplex.css">
+<title></title>
+<link rel="stylesheet" href="../../../Active.css" type="text/css" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rev="made" href="mailto:" />
+</head>
+
+<body>
+
+
+
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#VERSION">VERSION</a></li>
+  <li><a href="#SYNOPSIS">SYNOPSIS</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
+  <li><a href="#FUNCTIONS">FUNCTIONS</a>
+    <ul>
+      <li><a href="#capture-">capture()</a></li>
+      <li><a href="#capture_exec-">capture_exec()</a></li>
+      <li><a href="#capture_exec_combined-">capture_exec_combined()</a></li>
+      <li><a href="#qxx-">qxx()</a></li>
+      <li><a href="#qxy-">qxy()</a></li>
+    </ul>
+  </li>
+  <li><a href="#SEE-ALSO">SEE ALSO</a></li>
+  <li><a href="#AUTHORS">AUTHORS</a></li>
+  <li><a href="#COPYRIGHT-AND-LICENSE">COPYRIGHT AND LICENSE</a></li>
+</ul>
+
+<h1 id="NAME">NAME</h1>
+
+<p>IO::CaptureOutput - capture STDOUT and STDERR from Perl code, subprocesses or XS</p>
+
+<h1 id="VERSION">VERSION</h1>
+
+<p>This documentation describes version 1.1102.</p>
+
+<h1 id="SYNOPSIS">SYNOPSIS</h1>
+
+<pre><code>     <span class="keyword">use</span> <span class="variable">IO::CaptureOutput</span> <span class="string">qw(capture qxx qxy)</span><span class="operator">;</span>
+      
+     <span class="comment"># STDOUT and STDERR separately</span>
+     <span class="variable">capture</span> <span class="operator">{</span> <span class="variable">noisy_sub</span><span class="operator">(</span><span class="variable">@args</span><span class="operator">)</span> <span class="operator">}</span> <span class="operator">\</span><span class="variable">$stdout</span><span class="operator">,</span> <span class="operator">\</span><span class="variable">$stderr</span><span class="operator">;</span>
+      
+     <span class="comment"># STDOUT and STDERR together</span>
+     <span class="variable">capture</span> <span class="operator">{</span> <span class="variable">noisy_sub</span><span class="operator">(</span><span class="variable">@args</span><span class="operator">)</span> <span class="operator">}</span> <span class="operator">\</span><span class="variable">$combined</span><span class="operator">,</span> <span class="operator">\</span><span class="variable">$combined</span><span class="operator">;</span>
+      
+     <span class="comment"># STDOUT and STDERR from external command</span>
+     <span class="operator">(</span><span class="variable">$stdout</span><span class="operator">,</span> <span class="variable">$stderr</span><span class="operator">,</span> <span class="variable">$success</span><span class="operator">)</span> <span class="operator">=</span> <span class="variable">qxx</span><span class="operator">(</span> <span class="variable">@cmd</span> <span class="operator">);</span>
+      
+     <span class="comment"># STDOUT and STDERR together from external command</span>
+     <span class="operator">(</span><span class="variable">$combined</span><span class="operator">,</span> <span class="variable">$success</span><span class="operator">)</span> <span class="operator">=</span> <span class="variable">qxy</span><span class="operator">(</span> <span class="variable">@cmd</span> <span class="operator">);</span>
+</code></pre>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
+<p>This module provides routines for capturing STDOUT and STDERR from perl subroutines, forked system calls (e.g. <code>system()</code>, <code>fork()</code>) and from XS or C modules.</p>
+
+<h1 id="FUNCTIONS">FUNCTIONS</h1>
+
+<p>The following functions will be exported on demand.</p>
+
+<h2 id="capture-">capture()</h2>
+
+<pre><code>     <span class="variable">capture</span> <span class="operator">\&amp;</span><span class="variable">subroutine</span><span class="operator">,</span> <span class="operator">\</span><span class="variable">$stdout</span><span class="operator">,</span> <span class="operator">\</span><span class="variable">$stderr</span><span class="operator">;</span>
+</code></pre>
+
+<p>Captures everything printed to <code>STDOUT</code> and <code>STDERR</code> for the duration of <code>&amp;subroutine</code>. <code>$stdout</code> and <code>$stderr</code> are optional scalars that will contain <code>STDOUT</code> and <code>STDERR</code> respectively.</p>
+
+<p><code>capture()</code> uses a code prototype so the first argument can be specified directly within brackets if desired.</p>
+
+<pre><code>     <span class="comment"># shorthand with prototype</span>
+     <span class="variable">capture</span> <span class="operator">{</span> <span class="keyword">print</span> <span class="keyword">__PACKAGE__</span> <span class="operator">}</span> <span class="operator">\</span><span class="variable">$stdout</span><span class="operator">,</span> <span class="operator">\</span><span class="variable">$stderr</span><span class="operator">;</span>
+</code></pre>
+
+<p>Returns the return value(s) of <code>&amp;subroutine</code>. The sub is called in the same context as <code>capture()</code> was called e.g.:</p>
+
+<pre><code>     <span class="variable">@rv</span> <span class="operator">=</span> <span class="variable">capture</span> <span class="operator">{</span> <span class="keyword">wantarray</span> <span class="operator">}</span> <span class="operator">;</span> <span class="comment"># returns true</span>
+     <span class="variable">$rv</span> <span class="operator">=</span> <span class="variable">capture</span> <span class="operator">{</span> <span class="keyword">wantarray</span> <span class="operator">}</span> <span class="operator">;</span> <span class="comment"># returns defined, but not true</span>
+     <span class="variable">capture</span> <span class="operator">{</span> <span class="keyword">wantarray</span> <span class="operator">};</span>       <span class="comment"># void, returns undef</span>
+</code></pre>
+
+<p><code>capture()</code> is able to capture output from subprocesses and C code, which traditional <code>tie()</code> methods of output capture are unable to do.</p>
+
+<p><b>Note:</b> <code>capture()</code> will only capture output that has been written or flushed to the filehandle.</p>
+
+<p>If the two scalar references refer to the same scalar, then <code>STDERR</code> will be merged to <code>STDOUT</code> before capturing and the scalar will hold the combined output of both.</p>
+
+<pre><code>     <span class="variable">capture</span> <span class="operator">\&amp;</span><span class="variable">subroutine</span><span class="operator">,</span> <span class="operator">\</span><span class="variable">$combined</span><span class="operator">,</span> <span class="operator">\</span><span class="variable">$combined</span><span class="operator">;</span>
+</code></pre>
+
+<p>Normally, <code>capture()</code> uses anonymous, temporary files for capturing output. If desired, specific file names may be provided instead as additional options.</p>
+
+<pre><code>     <span class="variable">capture</span> <span class="operator">\&amp;</span><span class="variable">subroutine</span><span class="operator">,</span> <span class="operator">\</span><span class="variable">$stdout</span><span class="operator">,</span> <span class="operator">\</span><span class="variable">$stderr</span><span class="operator">,</span> <span class="variable">$out_file</span><span class="operator">,</span> <span class="variable">$err_file</span><span class="operator">;</span>
+</code></pre>
+
+<p>Files provided will be clobbered, overwriting any previous data, but will persist after the call to <code>capture()</code> for inspection or other manipulation.</p>
+
+<p>By default, when no references are provided to hold STDOUT or STDERR, output is captured and silently discarded.</p>
+
+<pre><code>     <span class="comment"># Capture STDOUT, discard STDERR</span>
+     <span class="variable">capture</span> <span class="operator">\&amp;</span><span class="variable">subroutine</span><span class="operator">,</span> <span class="operator">\</span><span class="variable">$stdout</span><span class="operator">;</span>
+      
+     <span class="comment"># Discard STDOUT, capture STDERR</span>
+     <span class="variable">capture</span> <span class="operator">\&amp;</span><span class="variable">subroutine</span><span class="operator">,</span> <span class="keyword">undef</span><span class="operator">,</span> <span class="operator">\</span><span class="variable">$stderr</span><span class="operator">;</span>
+</code></pre>
+
+<p>However, even when using <code>undef</code>, output can be captured to specific files.</p>
+
+<pre><code>     <span class="comment"># Capture STDOUT to a specific file, discard STDERR</span>
+     <span class="variable">capture</span> <span class="operator">\&amp;</span><span class="variable">subroutine</span><span class="operator">,</span> <span class="operator">\</span><span class="variable">$stdout</span><span class="operator">,</span> <span class="keyword">undef</span><span class="operator">,</span> <span class="variable">$outfile</span><span class="operator">;</span>
+      
+     <span class="comment"># Discard STDOUT, capture STDERR to a specific file</span>
+     <span class="variable">capture</span> <span class="operator">\&amp;</span><span class="variable">subroutine</span><span class="operator">,</span> <span class="keyword">undef</span><span class="operator">,</span> <span class="operator">\</span><span class="variable">$stderr</span><span class="operator">,</span> <span class="keyword">undef</span><span class="operator">,</span> <span class="variable">$err_file</span><span class="operator">;</span>
+      
+     <span class="comment"># Discard both, capture merged output to a specific file</span>
+     <span class="variable">capture</span> <span class="operator">\&amp;</span><span class="variable">subroutine</span><span class="operator">,</span> <span class="keyword">undef</span><span class="operator">,</span> <span class="keyword">undef</span><span class="operator">,</span> <span class="variable">$mergedfile</span><span class="operator">;</span>
+</code></pre>
+
+<p>It is a fatal error to merge STDOUT and STDERR and request separate, specific files for capture.</p>
+
+<pre><code>     <span class="comment"># ERROR:</span>
+     <span class="variable">capture</span> <span class="operator">\&amp;</span><span class="variable">subroutine</span><span class="operator">,</span> <span class="operator">\</span><span class="variable">$stdout</span><span class="operator">,</span> <span class="operator">\</span><span class="variable">$stdout</span><span class="operator">,</span> <span class="variable">$out_file</span><span class="operator">,</span> <span class="variable">$err_file</span><span class="operator">;</span>
+     <span class="variable">capture</span> <span class="operator">\&amp;</span><span class="variable">subroutine</span><span class="operator">,</span> <span class="keyword">undef</span><span class="operator">,</span> <span class="keyword">undef</span><span class="operator">,</span> <span class="variable">$out_file</span><span class="operator">,</span> <span class="variable">$err_file</span><span class="operator">;</span>
+</code></pre>
+
+<p>If either STDOUT or STDERR should be passed through to the terminal instead of captured, provide a reference to undef -- <code>\undef</code> -- instead of a capture variable.</p>
+
+<pre><code>     <span class="comment"># Capture STDOUT, display STDERR</span>
+     <span class="variable">capture</span> <span class="operator">\&amp;</span><span class="variable">subroutine</span><span class="operator">,</span> <span class="operator">\</span><span class="variable">$stdout</span><span class="operator">,</span> <span class="operator">\</span><span class="keyword">undef</span><span class="operator">;</span>
+      
+     <span class="comment"># Display STDOUT, capture STDERR</span>
+     <span class="variable">capture</span> <span class="operator">\&amp;</span><span class="variable">subroutine</span><span class="operator">,</span> <span class="operator">\</span><span class="keyword">undef</span><span class="operator">,</span> <span class="operator">\</span><span class="variable">$stderr</span><span class="operator">;</span>
+</code></pre>
+
+<h2 id="capture_exec-">capture_exec()</h2>
+
+<pre><code>     <span class="operator">(</span><span class="variable">$stdout</span><span class="operator">,</span> <span class="variable">$stderr</span><span class="operator">,</span> <span class="variable">$success</span><span class="operator">,</span> <span class="variable">$exit_code</span><span class="operator">)</span> <span class="operator">=</span> <span class="variable">capture_exec</span><span class="operator">(</span><span class="variable">@args</span><span class="operator">);</span>
+</code></pre>
+
+<p>Captures and returns the output from <code>system(@args)</code>. In scalar context, <code>capture_exec()</code> will return what was printed to <code>STDOUT</code>. In list context, it returns what was printed to <code>STDOUT</code> and <code>STDERR</code> as well as a success flag and the exit value.</p>
+
+<pre><code>     <span class="variable">$stdout</span> <span class="operator">=</span> <span class="variable">capture_exec</span><span class="operator">(</span><span class="string">'perl'</span><span class="operator">,</span> <span class="string">'-e'</span><span class="operator">,</span> <span class="string">'print "hello world"'</span><span class="operator">);</span>
+      
+     <span class="operator">(</span><span class="variable">$stdout</span><span class="operator">,</span> <span class="variable">$stderr</span><span class="operator">,</span> <span class="variable">$success</span><span class="operator">,</span> <span class="variable">$exit_code</span><span class="operator">)</span> <span class="operator">=</span> 
+         <span class="variable">capture_exec</span><span class="operator">(</span><span class="string">'perl'</span><span class="operator">,</span> <span class="string">'-e'</span><span class="operator">,</span> <span class="string">'warn "Test"'</span><span class="operator">);</span>
+</code></pre>
+
+<p><code>capture_exec</code> passes its arguments to <code>system()</code> and on MSWin32 will protect arguments with shell quotes if necessary. This makes it a handy and slightly more portable alternative to backticks, piped <code>open()</code> and <code>IPC::Open3</code>.</p>
+
+<p>The <code>$success</code> flag returned will be true if the command ran successfully and false if it did not (if the command could not be run or if it ran and returned a non-zero exit value). On failure, the raw exit value of the <code>system()</code> call is available both in the <code>$exit_code</code> returned and in the <code>$?</code> variable.</p>
+
+<pre><code>   <span class="operator">(</span><span class="variable">$stdout</span><span class="operator">,</span> <span class="variable">$stderr</span><span class="operator">,</span> <span class="variable">$success</span><span class="operator">,</span> <span class="variable">$exit_code</span><span class="operator">)</span> <span class="operator">=</span> 
+       <span class="variable">capture_exec</span><span class="operator">(</span><span class="string">'perl'</span><span class="operator">,</span> <span class="string">'-e'</span><span class="operator">,</span> <span class="string">'warn "Test" and exit 1'</span><span class="operator">);</span>
+    
+   <span class="keyword">if</span> <span class="operator">(</span> <span class="operator">!</span> <span class="variable">$success</span> <span class="operator">)</span> <span class="operator">{</span>
+       <span class="keyword">print</span> <span class="string">"The exit code was "</span> <span class="operator">.</span> <span class="operator">(</span><span class="variable">$exit_code</span> <span class="operator">&gt;&gt;</span> <span class="number">8</span><span class="operator">)</span> <span class="operator">.</span> <span class="string">"\n"</span><span class="operator">;</span>
+   <span class="operator">}</span>
+</code></pre>
+
+<p>See <a href="../../../lib/pods/perlvar.html">perlvar</a> for more information on interpreting a child process exit code.</p>
+
+<h2 id="capture_exec_combined-">capture_exec_combined()</h2>
+
+<pre><code>     <span class="operator">(</span><span class="variable">$combined</span><span class="operator">,</span> <span class="variable">$success</span><span class="operator">,</span> <span class="variable">$exit_code</span><span class="operator">)</span> <span class="operator">=</span> <span class="variable">capture_exec_combined</span><span class="operator">(</span>
+         <span class="string">'perl'</span><span class="operator">,</span> <span class="string">'-e'</span><span class="operator">,</span> <span class="string">'print "hello\n"'</span><span class="operator">,</span> <span class="string">'warn "Test\n"
+     );
+     </span>
+</code></pre>
+
+<p>This is just like <code>capture_exec()</code>, except that it merges <code>STDERR</code> with <code>STDOUT</code> before capturing output.</p>
+
+<p><b>Note:</b> there is no guarantee that text printed to <code>STDOUT</code> and <code>STDERR</code> in the subprocess will be appear in order. The actual order will depend on how IO buffering is handled in the subprocess.</p>
+
+<h2 id="qxx-">qxx()</h2>
+
+<p>This is an alias for <code>capture_exec()</code>.</p>
+
+<h2 id="qxy-">qxy()</h2>
+
+<p>This is an alias for <code>capture_exec_combined()</code>.</p>
+
+<h1 id="SEE-ALSO">SEE ALSO</h1>
+
+<ul>
+
+<li><p><a href="../../../lib/IPC/Open3.html">IPC::Open3</a></p>
+
+</li>
+<li><p><a>IO::Capture</a></p>
+
+</li>
+<li><p><a>IO::Utils</a></p>
+
+</li>
+<li><p><a>IPC::System::Simple</a></p>
+
+</li>
+</ul>
+
+<h1 id="AUTHORS">AUTHORS</h1>
+
+<ul>
+
+<li><p>Simon Flack &lt;simonflk _AT_ cpan.org&gt; (original author)</p>
+
+</li>
+<li><p>David Golden &lt;dagolden _AT_ cpan.org&gt; (co-maintainer since version 1.04)</p>
+
+</li>
+</ul>
+
+<h1 id="COPYRIGHT-AND-LICENSE">COPYRIGHT AND LICENSE</h1>
+
+<p>Portions copyright 2004, 2005 Simon Flack. Portions copyright 2007, 2008 David Golden. All rights reserved.</p>
+
+<p>You may distribute under the terms of either the GNU General Public License or the Artistic License, as specified in the Perl README file.</p>
+
+
+</body>
+
+</html>
+
+

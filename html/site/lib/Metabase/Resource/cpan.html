@@ -1,0 +1,108 @@
+<?xml version="1.0" ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<!-- saved from url=(0017)http://localhost/ -->
+<script language="JavaScript" src="../../../../displayToc.js"></script>
+<script language="JavaScript" src="../../../../tocParas.js"></script>
+<script language="JavaScript" src="../../../../tocTab.js"></script>
+<link rel="stylesheet" type="text/css" href="../../../../scineplex.css">
+<title></title>
+<link rel="stylesheet" href="../../../../Active.css" type="text/css" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rev="made" href="mailto:" />
+</head>
+
+<body>
+
+
+
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#VERSION">VERSION</a></li>
+  <li><a href="#SYNOPSIS">SYNOPSIS</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a>
+    <ul>
+      <li><a href="#distfile">distfile</a></li>
+    </ul>
+  </li>
+  <li><a href="#BUGS">BUGS</a></li>
+  <li><a href="#AUTHORS">AUTHORS</a></li>
+  <li><a href="#COPYRIGHT-AND-LICENSE">COPYRIGHT AND LICENSE</a></li>
+</ul>
+
+<h1 id="NAME">NAME</h1>
+
+<p>Metabase::Resource::cpan - class for Metabase resources</p>
+
+<h1 id="VERSION">VERSION</h1>
+
+<p>version 0.021</p>
+
+<h1 id="SYNOPSIS">SYNOPSIS</h1>
+
+<pre><code>  <span class="keyword">my</span> <span class="variable">$resource</span> <span class="operator">=</span> <span class="variable">Metabase::Resource</span><span class="operator">-&gt;</span><span class="variable">new</span><span class="operator">(</span>
+    <span class="string">'cpan:///distfile/RJBS/Metabase-Fact-0.001.tar.gz'</span><span class="operator">,</span>
+  <span class="operator">);</span>
+  
+  <span class="keyword">my</span> <span class="variable">$resource_meta</span> <span class="operator">=</span> <span class="variable">$resource</span><span class="operator">-&gt;</span><span class="variable">metadata</span><span class="operator">;</span>
+  <span class="keyword">my</span> <span class="variable">$typemap</span>       <span class="operator">=</span> <span class="variable">$resource</span><span class="operator">-&gt;</span><span class="variable">metadata_types</span><span class="operator">;</span>
+</code></pre>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
+<p>Generates resource metadata for resources of the scheme &#39;cpan&#39;.</p>
+
+<p>The <a href="../../../../cpan/build/Metabase-Fact-0.021-fbjRp3/blib/lib/Metabase/Resource/cpan.html">Metabase::Resource::cpan</a> class supports the following sub-type(s).</p>
+
+<h2 id="distfile">distfile</h2>
+
+<pre><code>  <span class="keyword">my</span> <span class="variable">$resource</span> <span class="operator">=</span> <span class="variable">Metabase::Resource</span><span class="operator">-&gt;</span><span class="variable">new</span><span class="operator">(</span>
+    <span class="string">'cpan:///distfile/RJBS/URI-cpan-1.000.tar.gz'</span><span class="operator">,</span>
+  <span class="operator">);</span>
+</code></pre>
+
+<p>For the example above, the resource metadata structure would contain the following elements:</p>
+
+<pre><code>  scheme       =&gt; cpan
+  type         =&gt; distfile
+  dist_file    =&gt; RJBS/URI-cpan-1.000.tar.gz
+  cpan_id      =&gt; RJBS
+  dist_name    =&gt; URI-cpan
+  dist_version =&gt; 1.000</code></pre>
+
+<h1 id="BUGS">BUGS</h1>
+
+<p>Please report any bugs or feature using the CPAN Request Tracker. Bugs can be submitted through the web interface at <a href="http://rt.cpan.org/Dist/Display.html?Queue=Metabase-Fact">http://rt.cpan.org/Dist/Display.html?Queue=Metabase-Fact</a></p>
+
+<p>When submitting a bug or request, please include a test-file or a patch to an existing test-file that illustrates the bug or desired feature.</p>
+
+<h1 id="AUTHORS">AUTHORS</h1>
+
+<ul>
+
+<li><p>David Golden &lt;dagolden@cpan.org&gt;</p>
+
+</li>
+<li><p>Ricardo Signes &lt;rjbs@cpan.org&gt;</p>
+
+</li>
+<li><p>H.Merijn Brand &lt;hmbrand@cpan.org&gt;</p>
+
+</li>
+</ul>
+
+<h1 id="COPYRIGHT-AND-LICENSE">COPYRIGHT AND LICENSE</h1>
+
+<p>This software is Copyright (c) 2012 by David Golden.</p>
+
+<p>This is free software, licensed under:</p>
+
+<pre><code>  The Apache License, Version 2.0, January 2004</code></pre>
+
+
+</body>
+
+</html>
+
+

@@ -1,0 +1,150 @@
+<?xml version="1.0" ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<!-- saved from url=(0017)http://localhost/ -->
+<script language="JavaScript" src="../../../../displayToc.js"></script>
+<script language="JavaScript" src="../../../../tocParas.js"></script>
+<script language="JavaScript" src="../../../../tocTab.js"></script>
+<link rel="stylesheet" type="text/css" href="../../../../scineplex.css">
+<title></title>
+<link rel="stylesheet" href="../../../../Active.css" type="text/css" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rev="made" href="mailto:" />
+</head>
+
+<body>
+
+
+
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#VERSION">VERSION</a></li>
+  <li><a href="#SYNOPSIS">SYNOPSIS</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
+  <li><a href="#USAGE">USAGE</a>
+    <ul>
+      <li><a href="#The-short-way">The short way</a></li>
+      <li><a href="#The-long-way">The long way</a></li>
+    </ul>
+  </li>
+  <li><a href="#METHODS">METHODS</a>
+    <ul>
+      <li><a href="#create">create</a></li>
+      <li><a href="#load">load</a></li>
+      <li><a href="#save">save</a></li>
+    </ul>
+  </li>
+  <li><a href="#BUGS">BUGS</a></li>
+  <li><a href="#AUTHORS">AUTHORS</a></li>
+  <li><a href="#COPYRIGHT-AND-LICENSE">COPYRIGHT AND LICENSE</a></li>
+</ul>
+
+<h1 id="NAME">NAME</h1>
+
+<p>Metabase::User::Profile - Metabase report class for user-related facts</p>
+
+<h1 id="VERSION">VERSION</h1>
+
+<p>version 0.021</p>
+
+<h1 id="SYNOPSIS">SYNOPSIS</h1>
+
+<pre><code>  <span class="keyword">use</span> <span class="variable">Metabase::User::Profile</span><span class="operator">;</span>
+  
+  <span class="keyword">my</span> <span class="variable">$profile</span> <span class="operator">=</span> <span class="variable">Metabase::User::Profile</span><span class="operator">-&gt;</span><span class="variable">create</span><span class="operator">(</span>
+    <span class="string">full_name</span>     <span class="operator">=&gt;</span> <span class="string">'John Doe'</span><span class="operator">,</span>
+    <span class="string">email_address</span> <span class="operator">=&gt;</span> <span class="string">'jdoe@example.com'</span><span class="operator">,</span>
+  <span class="operator">);</span>
+</code></pre>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
+<p>Metabase report class encapsulating Facts about a metabase user</p>
+
+<h1 id="USAGE">USAGE</h1>
+
+<h2 id="The-short-way">The short way</h2>
+
+<pre><code>  <span class="keyword">my</span> <span class="variable">$profile</span> <span class="operator">=</span> <span class="variable">Metabase::User::Profile</span><span class="operator">-&gt;</span><span class="variable">create</span><span class="operator">(</span>
+    <span class="string">full_name</span>     <span class="operator">=&gt;</span> <span class="string">'John Doe'</span><span class="operator">,</span>
+    <span class="string">email_address</span> <span class="operator">=&gt;</span> <span class="string">'jdoe@example.com'</span><span class="operator">,</span>
+  <span class="operator">);</span>
+</code></pre>
+
+<h2 id="The-long-way">The long way</h2>
+
+<pre><code>  <span class="keyword">my</span> <span class="variable">$profile</span> <span class="operator">=</span> <span class="variable">Metabase::User::Profile</span><span class="operator">-&gt;</span><span class="variable">open</span><span class="operator">(</span>
+    <span class="string">resource</span> <span class="operator">=&gt;</span> <span class="string">'metabase:user:b66c7662-1d34-11de-a668-0df08d1878c0'</span>
+    <span class="string">creator</span>  <span class="operator">=&gt;</span> <span class="string">'metabase:user:b66c7662-1d34-11de-a668-0df08d1878c0'</span>
+  <span class="operator">);</span>
+  
+  <span class="variable">$profile</span><span class="operator">-&gt;</span><span class="variable">add</span><span class="operator">(</span> <span class="string">'Metabase::User::EmailAddress'</span> <span class="operator">=&gt;</span> <span class="string">'jdoe@example.com'</span> <span class="operator">);</span>
+  <span class="variable">$profile</span><span class="operator">-&gt;</span><span class="variable">add</span><span class="operator">(</span> <span class="string">'Metabase::User::FullName'</span>     <span class="operator">=&gt;</span> <span class="string">'John Doe'</span> <span class="operator">);</span>
+    
+  <span class="variable">$profile</span><span class="operator">-&gt;</span><span class="variable">close</span><span class="operator">;</span>
+</code></pre>
+
+<h1 id="METHODS">METHODS</h1>
+
+<h2 id="create">create</h2>
+
+<pre><code>  <span class="keyword">my</span> <span class="variable">$new_profile</span> <span class="operator">=</span> <span class="variable">Metabase::User::Profile</span><span class="operator">-&gt;</span><span class="variable">create</span><span class="operator">(</span><span class="variable">%arg</span><span class="operator">);</span>
+</code></pre>
+
+<p>This method creates a new user profile object from the given parameters.</p>
+
+<p>Valid parameters include:</p>
+
+<pre><code>  full_name      - the user&#39;s full name
+  email_address  - the user&#39;s email address</code></pre>
+
+<h2 id="load">load</h2>
+
+<pre><code>  <span class="keyword">my</span> <span class="variable">$profile</span> <span class="operator">=</span> <span class="variable">Metabase::User::Profile</span><span class="operator">-&gt;</span><span class="variable">load</span><span class="operator">(</span><span class="variable">$filename</span><span class="operator">);</span>
+</code></pre>
+
+<p>This method loads a profile from disk and returns it.</p>
+
+<h2 id="save">save</h2>
+
+<pre><code>  <span class="variable">$profile</span><span class="operator">-&gt;</span><span class="variable">save</span><span class="operator">(</span><span class="variable">$filename</span><span class="operator">);</span>
+</code></pre>
+
+<p>This method writes out the profile to a file. If the file cannot be written, an exception is raised. If the save is successful, a true value is returned.</p>
+
+<h1 id="BUGS">BUGS</h1>
+
+<p>Please report any bugs or feature using the CPAN Request Tracker. Bugs can be submitted through the web interface at <a href="http://rt.cpan.org/Dist/Display.html?Queue=Metabase-Fact">http://rt.cpan.org/Dist/Display.html?Queue=Metabase-Fact</a></p>
+
+<p>When submitting a bug or request, please include a test-file or a patch to an existing test-file that illustrates the bug or desired feature.</p>
+
+<h1 id="AUTHORS">AUTHORS</h1>
+
+<ul>
+
+<li><p>David Golden &lt;dagolden@cpan.org&gt;</p>
+
+</li>
+<li><p>Ricardo Signes &lt;rjbs@cpan.org&gt;</p>
+
+</li>
+<li><p>H.Merijn Brand &lt;hmbrand@cpan.org&gt;</p>
+
+</li>
+</ul>
+
+<h1 id="COPYRIGHT-AND-LICENSE">COPYRIGHT AND LICENSE</h1>
+
+<p>This software is Copyright (c) 2012 by David Golden.</p>
+
+<p>This is free software, licensed under:</p>
+
+<pre><code>  The Apache License, Version 2.0, January 2004</code></pre>
+
+
+</body>
+
+</html>
+
+

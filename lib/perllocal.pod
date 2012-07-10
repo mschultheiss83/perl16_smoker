@@ -1,0 +1,4092 @@
+=head2 Mon Jun 11 13:09:32 2012: C<Module> L<HTML::Tagset|HTML::Tagset>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 3.20>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:09:39 2012: C<Module> L<URI|URI>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.60>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:09:42 2012: C<Module> L<LWP::MediaTypes|LWP::MediaTypes>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 6.02>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:09:46 2012: C<Module> L<HTTP::Date|HTTP::Date>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 6.02>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:09:54 2012: C<Module> L<HTML::Parser|HTML::Parser>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 3.69>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:09:57 2012: C<Module> L<Encode::Locale|Encode::Locale>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.03>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:10:02 2012: C<Module> L<HTTP::Message|HTTP::Message>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 6.03>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:10:10 2012: C<Module> L<WWW::RobotRules|WWW::RobotRules>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 6.02>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:10:14 2012: C<Module> L<Net::HTTP|Net::HTTP>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 6.01>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:10:17 2012: C<Module> L<HTTP::Negotiate|HTTP::Negotiate>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 6.01>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:10:24 2012: C<Module> L<HTTP::Daemon|HTTP::Daemon>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 6.01>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:10:27 2012: C<Module> L<HTTP::Cookies|HTTP::Cookies>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 6.01>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:10:37 2012: C<Module> L<File::Listing|File::Listing>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 6.04>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:10:40 2012: C<Module> L<Sub::Install|Sub::Install>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.925>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:10:46 2012: C<Module> L<Params::Util|Params::Util>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.04>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:10:50 2012: C<Module> L<Win32::Job|Win32::Job>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.04>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:11:10 2012: C<Module> L<LWP|LWP>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 6.04>
+
+=item *
+
+C<EXE_FILES: bin/lwp-request bin/lwp-mirror bin/lwp-download bin/lwp-dump>
+
+=back
+
+=head2 Mon Jun 11 13:11:18 2012: C<Module> L<Archive::Zip|Archive::Zip>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.30>
+
+=item *
+
+C<EXE_FILES: script/crc32>
+
+=back
+
+=head2 Mon Jun 11 13:11:21 2012: C<Module> L<Try::Tiny|Try::Tiny>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.11>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:11:24 2012: C<Module> L<Data::OptList|Data::OptList>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.107>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:11:41 2012: C<Module> L<ActiveState::Utils|ActiveState::Utils>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 2.10>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:11:44 2012: C<Module> L<Test::Fatal|Test::Fatal>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.008>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:11:49 2012: C<Module> L<Sub::Exporter|Sub::Exporter>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.982>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:11:54 2012: C<Module> L<List::MoreUtils|List::MoreUtils>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.33>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:11:57 2012: C<Module> L<Test::Requires|Test::Requires>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.06>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:12:07 2012: C<Module> L<Test::Tester|Test::Tester>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.108>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:12:10 2012: C<Module> L<Hook::LexWrap|Hook::LexWrap>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.24>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:14:05 2012: C<Module> L<Dist::CheckConflicts|Dist::CheckConflicts>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.02>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:14:08 2012: C<Module> L<Package::DeprecationManager|Package::DeprecationManager>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.11>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:14:36 2012: C<Module> L<Sub::Uplevel|Sub::Uplevel>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.24>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:14:39 2012: C<Module> L<Test::NoWarnings|Test::NoWarnings>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.04>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:14:42 2012: C<Module> L<Test::SubCalls|Test::SubCalls>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.09>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:14:46 2012: C<Module> L<Test::Object|Test::Object>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.07>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:14:54 2012: C<Module> L<File::Remove|File::Remove>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.52>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:14:57 2012: C<Module> L<Class::Inspector|Class::Inspector>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.27>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:15:00 2012: C<Module> L<Task::Weaken|Task::Weaken>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.04>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:15:03 2012: C<Module> L<IO::String|IO::String>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.08>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:15:08 2012: C<Module> L<Clone|Clone>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.31>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:15:11 2012: C<Module> L<Devel::StackTrace|Devel::StackTrace>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.27>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:15:14 2012: C<Module> L<Class::Data::Inheritable|Class::Data::Inheritable>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.08>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:15:35 2012: C<Module> L<Net::SSLeay|Net::SSLeay>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.42>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:15:45 2012: C<Module> L<Package::Stash|Package::Stash>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.33>
+
+=item *
+
+C<EXE_FILES: bin/package-stash-conflicts>
+
+=back
+
+=head2 Mon Jun 11 13:16:03 2012: C<Module> L<Probe::Perl|Probe::Perl>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.01>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:16:08 2012: C<Module> L<IPC::Run3|IPC::Run3>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.045>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:16:12 2012: C<Module> L<Test::Exception|Test::Exception>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.31>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:17:25 2012: C<Module> L<Test::Deep|Test::Deep>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.108>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:18:06 2012: C<Module> L<PPI|PPI>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.215>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:18:10 2012: C<Module> L<Readonly|Readonly>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.03>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:18:13 2012: C<Module> L<Exception::Class|Exception::Class>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.32>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:18:18 2012: C<Module> L<Mozilla::CA|Mozilla::CA>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 20120309>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:18:32 2012: C<Module> L<IO::Socket::SSL|IO::Socket::SSL>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.74>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:18:36 2012: C<Module> L<Algorithm::Diff|Algorithm::Diff>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.1902>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:18:40 2012: C<Module> L<Class::C3|Class::C3>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.24>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:18:45 2012: C<Module> L<Class::Load|Class::Load>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.13>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:18:50 2012: C<Module> L<GD|GD>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 2.46>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:18:55 2012: C<Module> L<Test::Script|Test::Script>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.07>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:19:07 2012: C<Module> L<JSON|JSON>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 2.53>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:19:10 2012: C<Module> L<Carp::Clan|Carp::Clan>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 6.04>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:20:14 2012: C<Module> L<DBI|DBI>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.618>
+
+=item *
+
+C<EXE_FILES: dbiproxy dbiprof dbilogstrip>
+
+=back
+
+=head2 Mon Jun 11 13:20:20 2012: C<Module> L<Tcl|Tcl>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.02>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:20:23 2012: C<Module> L<PPIx::Utilities|PPIx::Utilities>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.001000>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:20:33 2012: C<Module> L<PPIx::Regexp|PPIx::Regexp>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.026>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:20:37 2012: C<Module> L<Email::Address|Email::Address>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.895>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:20:40 2012: C<Module> L<Config::Tiny|Config::Tiny>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 2.14>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:20:43 2012: C<Module> L<B::Keywords|B::Keywords>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.12>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:20:50 2012: C<Module> L<HTML::Template|HTML::Template>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 2.10>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:20:54 2012: C<Module> L<ActiveState::YAML|ActiveState::YAML>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.01>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:20:58 2012: C<Module> L<ActiveState::RelocateTree|ActiveState::RelocateTree>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.04>
+
+=item *
+
+C<EXE_FILES: bin/reloc_perl>
+
+=back
+
+=head2 Mon Jun 11 13:21:08 2012: C<Module> L<ActivePerl::DocTools|ActivePerl::DocTools>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 2.04>
+
+=item *
+
+C<EXE_FILES: bin/ap-update-html bin/ap-user-guide>
+
+=back
+
+=head2 Mon Jun 11 13:21:13 2012: C<Module> L<Win32API::Registry|Win32API::Registry>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.30>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:21:17 2012: C<Module> L<Win32::WinError|Win32::WinError>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.03>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:21:21 2012: C<Module> L<Win32::Process|Win32::Process>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.14>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:21:25 2012: C<Module> L<Win32::Pipe|Win32::Pipe>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.024>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:21:35 2012: C<Module> L<Compress::Raw::Zlib|Compress::Raw::Zlib>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 2.051>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:21:41 2012: C<Module> L<Compress::Raw::Bzip2|Compress::Raw::Bzip2>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 2.049>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:21:50 2012: C<Module> L<XML::Parser|XML::Parser>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 2.41>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:21:52 2012: C<Module> L<HTTP::Server::Simple|HTTP::Server::Simple>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.44>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:21:57 2012: C<Module> L<LWP::Protocol::https|LWP::Protocol::https>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 6.03>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:22:04 2012: C<Module> L<HTML::Tree|HTML::Tree>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 4.2>
+
+=item *
+
+C<EXE_FILES: htmltree>
+
+=back
+
+=head2 Mon Jun 11 13:22:08 2012: C<Module> L<HTML::Form|HTML::Form>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 6.03>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:22:10 2012: C<Module> L<Text::Reform|Text::Reform>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.20>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:22:14 2012: C<Module> L<Text::Diff|Text::Diff>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.41>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:22:18 2012: C<Module> L<Sub::Name|Sub::Name>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.05>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:22:24 2012: C<Module> L<Package::Stash::XS|Package::Stash::XS>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.25>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:22:27 2012: C<Module> L<MRO::Compat|MRO::Compat>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.11>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:22:31 2012: C<Module> L<Eval::Closure|Eval::Closure>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.08>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:22:34 2012: C<Module> L<Devel::GlobalDestruction|Devel::GlobalDestruction>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.04>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:22:44 2012: C<Module> L<GD::Text|GD::Text>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.86>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:22:49 2012: C<Module> L<File::Which|File::Which>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.09>
+
+=item *
+
+C<EXE_FILES: script/pwhich>
+
+=back
+
+=head2 Mon Jun 11 13:22:53 2012: C<Module> L<JSON::Any|JSON::Any>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.29>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:23:07 2012: C<Module> L<Bit::Vector|Bit::Vector>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 7.2>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:23:58 2012: C<Module> L<ActiveState::Test|ActiveState::Test>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.00>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:24:16 2012: C<Module> L<Tkx|Tkx>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.09>
+
+=item *
+
+C<EXE_FILES: tkx-ed tkx-prove>
+
+=back
+
+=head2 Mon Jun 11 13:25:49 2012: C<Module> L<Perl::Critic|Perl::Critic>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.117>
+
+=item *
+
+C<EXE_FILES: bin/perlcritic>
+
+=back
+
+=head2 Mon Jun 11 13:25:53 2012: C<Module> L<Term::ReadKey|Term::ReadKey>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 2.30>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:26:27 2012: C<Module> L<DBD::SQLite|DBD::SQLite>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.35>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:26:37 2012: C<Module> L<Win32API::Net|Win32API::Net>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.16>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:26:40 2012: C<Module> L<Win32::TieRegistry|Win32::TieRegistry>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.26>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:26:44 2012: C<Module> L<Win32::Sound|Win32::Sound>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.49>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:26:48 2012: C<Module> L<Win32::Shortcut|Win32::Shortcut>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.07>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:26:52 2012: C<Module> L<Win32::Service|Win32::Service>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.06>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:27:00 2012: C<Module> L<Win32::Registry|Win32::Registry>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.10>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:27:04 2012: C<Module> L<Win32::PerfLib|Win32::PerfLib>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.06>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:27:09 2012: C<Module> L<Win32::OLE|Win32::OLE>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.1709>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:27:14 2012: C<Module> L<Win32::ODBC|Win32::ODBC>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.034>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:27:18 2012: C<Module> L<Win32::NetResource|Win32::NetResource>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.056>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:27:22 2012: C<Module> L<Win32::NetAdmin|Win32::NetAdmin>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.11>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:27:26 2012: C<Module> L<Win32::Internet|Win32::Internet>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.084>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:27:39 2012: C<Module> L<Win32::FileSecurity|Win32::FileSecurity>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.08>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:27:43 2012: C<Module> L<Win32::File|Win32::File>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.06>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:27:49 2012: C<Module> L<Win32::EventLog|Win32::EventLog>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.076>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:28:00 2012: C<Module> L<Win32::Console::ANSI|Win32::Console::ANSI>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.04>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:28:04 2012: C<Module> L<Win32::Console|Win32::Console>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.09>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:28:08 2012: C<Module> L<Win32::Clipboard|Win32::Clipboard>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.56>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:28:22 2012: C<Module> L<Win32::AuthenticateUser|Win32::AuthenticateUser>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.02>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:28:29 2012: C<Module> L<Win32::API|Win32::API>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.64>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:28:46 2012: C<Module> L<ap-iis-config|ap-iis-config>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1>
+
+=item *
+
+C<EXE_FILES: bin/ap-iis-config>
+
+=back
+
+=head2 Mon Jun 11 13:28:49 2012: C<Module> L<lib|lib>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.63>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:29:03 2012: C<Module> L<Test::Simple|Test::Simple>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.98>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:29:07 2012: C<Module> L<Shell|Shell>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.72>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:29:13 2012: C<Module> L<List::Util|List::Util>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.25>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:29:17 2012: C<Module> L<Safe|Safe>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 2.33>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:29:32 2012: C<Module> L<Pod::Simple|Pod::Simple>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 3.22>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:30:33 2012: C<Module> L<Memoize|Memoize>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.03>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:32:13 2012: C<Module> L<IO::Compress|IO::Compress>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 2.049>
+
+=item *
+
+C<EXE_FILES: bin/zipdetails>
+
+=back
+
+=head2 Mon Jun 11 13:32:34 2012: C<Module> L<HTTP::Tiny|HTTP::Tiny>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.021>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:32:58 2012: C<Module> L<File::Fetch|File::Fetch>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.34>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:33:14 2012: C<Module> L<ExtUtils::Install|ExtUtils::Install>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.54>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:33:20 2012: C<Module> L<CPAN::Meta::YAML|CPAN::Meta::YAML>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.008>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:33:27 2012: C<Module> L<Archive::Tar|Archive::Tar>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.84>
+
+=item *
+
+C<EXE_FILES: bin/ptar bin/ptardiff bin/ptargrep>
+
+=back
+
+=head2 Mon Jun 11 13:33:36 2012: C<Module> L<Archive::Extract|Archive::Extract>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.60>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:33:40 2012: C<Module> L<Term::ANSIColor|Term::ANSIColor>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 3.02>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:33:43 2012: C<Module> L<mylib|mylib>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.02>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:33:59 2012: C<Module> L<YAML::LibYAML|YAML::LibYAML>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.38>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:34:14 2012: C<Module> L<XML::Simple|XML::Simple>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 2.18>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:35:38 2012: C<Module> L<WWW::Mechanize|WWW::Mechanize>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.72>
+
+=item *
+
+C<EXE_FILES: bin/mech-dump>
+
+=back
+
+=head2 Mon Jun 11 13:35:41 2012: C<Module> L<Text::Glob|Text::Glob>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.09>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:35:53 2012: C<Module> L<Text::CSV_XS|Text::CSV_XS>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.88>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:35:56 2012: C<Module> L<Text::Autoformat|Text::Autoformat>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.669002>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:36:00 2012: C<Module> L<Test::Differences|Test::Differences>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.61>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:36:03 2012: C<Module> L<Term::ReadLine::Perl|Term::ReadLine::Perl>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.0303>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:36:16 2012: C<Module> L<SQL::Statement|SQL::Statement>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.33>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:36:19 2012: C<Module> L<Shell::Command|Shell::Command>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.06>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:36:22 2012: C<Module> L<Scope::Guard|Scope::Guard>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.20>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:36:26 2012: C<Module> L<Readonly::XS|Readonly::XS>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.05>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:36:29 2012: C<Module> L<PPM::Repositories|PPM::Repositories>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.19>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:36:33 2012: C<Module> L<Net::Telnet|Net::Telnet>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 3.03>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:39:58 2012: C<Module> L<Moose|Moose>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 2.0602>
+
+=item *
+
+C<EXE_FILES: bin/moose-outdated>
+
+=back
+
+=head2 Mon Jun 11 13:40:02 2012: C<Module> L<GD::Graph|GD::Graph>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.44>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:40:06 2012: C<Module> L<File::Next|File::Next>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.06>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:40:11 2012: C<Module> L<File::HomeDir|File::HomeDir>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.99>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:40:15 2012: C<Module> L<Digest::SHA1|Digest::SHA1>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 2.13>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:40:18 2012: C<Module> L<Digest::HMAC|Digest::HMAC>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.03>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:43:04 2012: C<Module> L<Devel::NYTProf|Devel::NYTProf>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 4.06>
+
+=item *
+
+C<EXE_FILES: bin/nytprofhtml bin/nytprofcsv bin/nytprofcg bin/nytprofmerge>
+
+=back
+
+=head2 Mon Jun 11 13:43:15 2012: C<Module> L<Date::Calc|Date::Calc>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 6.3>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:43:18 2012: C<Module> L<Data::Dump|Data::Dump>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.21>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:43:45 2012: C<Module> L<DBD::Pg|DBD::Pg>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 2.19.2>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:45:08 2012: C<Module> L<DBD::Oracle|DBD::Oracle>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.42>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:45:18 2012: C<Module> L<DBD::ODBC|DBD::ODBC>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.31>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:45:29 2012: C<Module> L<DBD::CSV|DBD::CSV>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.33>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:45:32 2012: C<Module> L<Class::Accessor|Class::Accessor>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.34>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:45:38 2012: C<Module> L<ActiveState::Scineplex|ActiveState::Scineplex>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.01>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:45:44 2012: C<Module> L<ActiveState::PerlCritic|ActiveState::PerlCritic>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 10.00>
+
+=item *
+
+C<EXE_FILES: bin/perlcritic-gui>
+
+=back
+
+=head2 Mon Jun 11 13:46:02 2012: C<Module> L<ActivePerl::PPM|ActivePerl::PPM>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 4.16>
+
+=item *
+
+C<EXE_FILES: bin/ppm bin/ppm-shell>
+
+=back
+
+=head2 Mon Jun 11 13:46:06 2012: C<Module> L<ActivePerl::CPAN::Config|ActivePerl::CPAN::Config>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.00>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Jun 11 13:46:09 2012: C<Module> L<ActivePerl::Config|ActivePerl::Config>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.03>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Tue Jul 10 15:34:23 2012: C<Module> L<Parse::CPAN::Meta|Parse::CPAN::Meta>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\site\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.4404>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Tue Jul 10 15:34:36 2012: C<Module> L<CPAN::Meta::Requirements|CPAN::Meta::Requirements>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\site\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 2.122>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Tue Jul 10 15:34:52 2012: C<Module> L<CPAN::Meta|CPAN::Meta>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\site\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 2.120921>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Tue Jul 10 15:35:07 2012: C<Module> L<CPAN::DistnameInfo|CPAN::DistnameInfo>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\site\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.12>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Tue Jul 10 15:35:30 2012: C<Module> L<CPAN::SQLite|CPAN::SQLite>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\site\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.202>
+
+=item *
+
+C<EXE_FILES: bin/cpandb>
+
+=back
+
+=head2 Tue Jul 10 15:39:44 2012: C<Module> L<Data::UUID|Data::UUID>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\site\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.217>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Tue Jul 10 15:39:59 2012: C<Module> L<Data::GUID|Data::GUID>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\site\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.046>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Tue Jul 10 15:40:35 2012: C<Module> L<Test::Reporter|Test::Reporter>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\site\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.58>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Tue Jul 10 15:41:17 2012: C<Module> L<Metabase::Fact|Metabase::Fact>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\site\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.021>
+
+=item *
+
+C<EXE_FILES: bin/metabase-profile>
+
+=back
+
+=head2 Tue Jul 10 15:41:38 2012: C<Module> L<Metabase::Client::Simple|Metabase::Client::Simple>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\site\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.008>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Tue Jul 10 15:41:57 2012: C<Module> L<CPAN::Testers::Report|CPAN::Testers::Report>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\site\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.999001>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Tue Jul 10 15:42:32 2012: C<Module> L<Test::NoWarnings|Test::NoWarnings>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\site\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.04>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Tue Jul 10 15:42:47 2012: C<Module> L<Config::Perl::V|Config::Perl::V>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\site\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.15>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Tue Jul 10 15:43:09 2012: C<Module> L<Test::Reporter::Transport::Metabase|Test::Reporter::Transport::Metabase>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\site\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.999008>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Tue Jul 10 15:51:30 2012: C<Module> L<Capture::Tiny|Capture::Tiny>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\site\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.18>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Tue Jul 10 15:51:59 2012: C<Module> L<Probe::Perl|Probe::Perl>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\site\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.01>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Tue Jul 10 15:52:38 2012: C<Module> L<IO::CaptureOutput|IO::CaptureOutput>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\site\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.1102>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Tue Jul 10 15:52:49 2012: C<Module> L<Devel::Autoflush|Devel::Autoflush>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\site\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.05>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Tue Jul 10 16:03:33 2012: C<Module> L<CPAN::Reporter|CPAN::Reporter>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\site\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.2006>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Tue Jul 10 16:12:16 2012: C<Module> L<CPAN::Reporter::Smoker|CPAN::Reporter::Smoker>
+
+=over 4
+
+=item *
+
+C<installed into: C:\Perl16\site\lib>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.24>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+

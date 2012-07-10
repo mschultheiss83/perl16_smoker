@@ -1,0 +1,284 @@
+<?xml version="1.0" ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<!-- saved from url=(0017)http://localhost/ -->
+<script language="JavaScript" src="../../../../displayToc.js"></script>
+<script language="JavaScript" src="../../../../tocParas.js"></script>
+<script language="JavaScript" src="../../../../tocTab.js"></script>
+<link rel="stylesheet" type="text/css" href="../../../../scineplex.css">
+<title></title>
+<link rel="stylesheet" href="../../../../Active.css" type="text/css" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rev="made" href="mailto:" />
+</head>
+
+<body>
+
+
+
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#VERSION">VERSION</a></li>
+  <li><a href="#SYNOPSIS">SYNOPSIS</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
+  <li><a href="#INTERACTIVE-CONFIGURATION-OPTIONS">INTERACTIVE CONFIGURATION OPTIONS</a>
+    <ul>
+      <li><a href="#Email-Address-required-">Email Address (required)</a></li>
+      <li><a href="#Transport-required-">Transport (required)</a></li>
+      <li><a href="#Action-Prompts">Action Prompts</a></li>
+      <li><a href="#Mail-Server-DEPRECATED-">Mail Server (DEPRECATED)</a></li>
+    </ul>
+  </li>
+  <li><a href="#ADVANCED-CONFIGURATION-OPTIONS">ADVANCED CONFIGURATION OPTIONS</a>
+    <ul>
+      <li><a href="#Skipfile-regular-expressions">Skipfile regular expressions</a></li>
+    </ul>
+  </li>
+  <li><a href="#CONFIGURATION-OPTIONS-FOR-DEBUGGING">CONFIGURATION OPTIONS FOR DEBUGGING</a></li>
+  <li><a href="#ENVIRONMENT">ENVIRONMENT</a></li>
+  <li><a href="#SEE-ALSO">SEE ALSO</a></li>
+  <li><a href="#AUTHOR">AUTHOR</a></li>
+  <li><a href="#COPYRIGHT-AND-LICENSE">COPYRIGHT AND LICENSE</a></li>
+</ul>
+
+<h1 id="NAME">NAME</h1>
+
+<p>CPAN::Reporter::Config - Config file options for CPAN::Reporter</p>
+
+<h1 id="VERSION">VERSION</h1>
+
+<p>version 1.2006</p>
+
+<h1 id="SYNOPSIS">SYNOPSIS</h1>
+
+<p>From the CPAN shell:</p>
+
+<pre><code>  cpan&gt; o conf init test_report</code></pre>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
+<p>Default options for CPAN::Reporter are read from a configuration file <code>.cpanreporter/config.ini</code> in the user&#39;s home directory. (On Win32 platforms, the directory will be located in the user&#39;s &quot;Documents&quot; directory.) The location of the configuration directory or file may be specified using environment variables instead.</p>
+
+<p>The configuration file is in &quot;ini&quot; format, with the option name and value separated by an &quot;=&quot; sign</p>
+
+<pre><code>   email_from = &quot;John Doe&quot; &lt;johndoe@nowhere.org&gt;
+   edit_report = no</code></pre>
+
+<p>Interactive configuration of email address and common action prompts may be repeated at any time from the CPAN shell.</p>
+
+<pre><code>  cpan&gt; o conf init test_report</code></pre>
+
+<p>If a configuration file does not exist, it will be created the first time interactive configuration is performed.</p>
+
+<p>Subsequent interactive configuration will also include any advanced options that have been added manually to the configuration file.</p>
+
+<h1 id="INTERACTIVE-CONFIGURATION-OPTIONS">INTERACTIVE CONFIGURATION OPTIONS</h1>
+
+<h2 id="Email-Address-required-">Email Address (required)</h2>
+
+<pre><code>   email_from = &lt;email address&gt;</code></pre>
+
+<p>CPAN::Reporter requires users to provide an email address that will be used in the header of the report.</p>
+
+<p>The email address provided should be a valid address format, e.g.:</p>
+
+<pre><code>  email_from = user@domain
+  email_from = John Doe &lt;user@domain&gt;
+  email_from = &quot;John Q. Public&quot; &lt;user@domain&gt;</code></pre>
+
+<h2 id="Transport-required-">Transport (required)</h2>
+
+<pre><code>   transport = &lt;transport class&gt; [transport args]</code></pre>
+
+<p>This sets the transport mechanism passed to the <code>transport()</code> method of <a href="../../../../site/lib/Test/Reporter.html">Test::Reporter</a>. Normally, CPAN::Reporter uses &#39;Metabase&#39; for transport class (i.e. <a href="../../../../site/lib/Test/Reporter/Transport/Metabase.html">Test::Reporter::Transport::Metabase</a>) and will provide a default set of transport arguments.</p>
+
+<p>Metabase transport arguments are two space-separated key/value pairs:</p>
+
+<ul>
+
+<li><p><code>uri</code> -- URI for the Metabase API. Defaults to <code>https://metabase.cpantesters.org/api/v1/</code></p>
+
+</li>
+<li><p><code>id_file</code> -- path to the user&#39;s Metabase profile file. Defaults to <code>metabase_id.json</code>. (Assumed to be in the <code>.cpanreporter</code> directory).</p>
+
+</li>
+</ul>
+
+<p>Prior to sending reports, a user must have a valid profile file at the path specified. For Metabase transport, CPAN::Reporter will automatically rewrite a relative <code>id_file</code> path as an absolute path located in the <code>.cpanreporter</code> directory.</p>
+
+<p>If the specified profile file does not exist, CPAN::Reporter will offer to run <code>metabase-profile</code> to create it.</p>
+
+<p>For other transport types, see the documentation that comes with your choice of Test::Reporter::Transport subclass for the proper way to set the <code>transport</code> configuration option.</p>
+
+<h2 id="Action-Prompts">Action Prompts</h2>
+
+<p>Several steps in the generation of a test report are optional. Configuration options control whether an action should be taken automatically or whether CPAN::Reporter should prompt the user for the action to take. The action to take may be different for each report grade. For example, users may wish to customize for which grades they wish to manually review a report before sending it.</p>
+
+<p>Most users should just accept the default settings until they have some experience as CPAN Testers.</p>
+
+<p>Valid actions, and their associated meaning, are as follows:</p>
+
+<ul>
+
+<li><p><code>yes</code> -- automatic yes</p>
+
+</li>
+<li><p><code>no</code> -- automatic no</p>
+
+</li>
+<li><p><code>ask/no</code> or just <code>ask</code> -- ask each time, but default to no</p>
+
+</li>
+<li><p><code>ask/yes</code> -- ask each time, but default to yes</p>
+
+</li>
+</ul>
+
+<p>For &quot;ask&quot; prompts, the default will be used if return is pressed immediately at the prompt or if the <code>PERL_MM_USE_DEFAULT</code> environment variable is set to a true value.</p>
+
+<p>Action prompt options take one or more space-separated &quot;grade:action&quot; pairs, which are processed left to right.</p>
+
+<pre><code>  edit_report = fail:ask/yes pass:no</code></pre>
+
+<p>An action by itself is taken as a default to be used for any grade which does not have a grade-specific action. A default action may also be set by using the word &quot;default&quot; in place of a grade.</p>
+
+<pre><code>  edit_report = ask/no
+  edit_report = default:ask/no</code></pre>
+
+<p>A grade by itself is taken to have the action &quot;yes&quot; for that grade.</p>
+
+<pre><code>  edit_report = default:no fail</code></pre>
+
+<p>Multiple grades may be specified together by separating them with a slash.</p>
+
+<pre><code>  edit_report = pass:no fail/na/unknown:ask/yes</code></pre>
+
+<p>The action prompt options included in interactive configuration are:</p>
+
+<ul>
+
+<li><p><code>edit_report = &lt;grade:action&gt; ...</code> -- edit the test report before sending? (default:ask/no pass/na:no)</p>
+
+</li>
+<li><p><code>send_report = &lt;grade:action&gt; ...</code> -- should test reports be sent at all? (default:ask/yes pass/na:yes)</p>
+
+</li>
+</ul>
+
+<p>Note that if <code>send_report</code> is set to &quot;no&quot;, CPAN::Reporter will still go through the motions of preparing a report, but will discard it rather than send it.</p>
+
+<p>A better way to disable CPAN::Reporter temporarily is with the CPAN option <code>test_report</code>:</p>
+
+<pre><code>  cpan&gt; o conf test_report 0</code></pre>
+
+<h2 id="Mail-Server-DEPRECATED-">Mail Server (DEPRECATED)</h2>
+
+<p>CPAN::Reporter used to send mail directly to perl.org mail servers. The <code>smtp_server</code> option is now deprecated and will be ignored if it exists.</p>
+
+<h1 id="ADVANCED-CONFIGURATION-OPTIONS">ADVANCED CONFIGURATION OPTIONS</h1>
+
+<p>These additional options are only necessary in special cases, for example if the default editor cannot be found or if reports shouldn&#39;t be sent in certain situations or for automated testing, and so on.</p>
+
+<ul>
+
+<li><p><code>command_timeout</code> -- if greater than zero and the CPAN config is <code>inactivity_timeout</code> is not set, then any commands executed by CPAN::Reporter will be halted after this many seconds; useful for unattended smoke testing to stop after some amount of time; generally, this should be large -- 900 seconds or more -- as some distributions&#39; tests take quite a long time to run. On MSWin32, <a href="../../../../lib/Win32/Job.html">Win32::Job</a> is a needed and trying to kill a processes may actually deadlock in some situations -- so use at your own risk.</p>
+
+</li>
+<li><p><code>editor = &lt;editor&gt;</code> -- editor to use to edit the test report; if not set, Test::Reporter will use environment variables <code>VISUAL</code>, <code>EDITOR</code> or <code>EDIT</code> (in that order) to find an editor</p>
+
+</li>
+<li><p><code>send_duplicates = &lt;grade:action&gt; ...</code> -- should duplicates of previous reports be sent, regardless of <code>send_report</code>? (default:no)</p>
+
+</li>
+<li><p><code>send_PL_report = &lt;grade:action&gt; ...</code> -- if defined, used in place of <code>send_report</code> during the PL phase</p>
+
+</li>
+<li><p><code>send_make_report = &lt;grade:action&gt; ...</code> -- if defined, used in place of <code>send_report</code> during the make phase</p>
+
+</li>
+<li><p><code>send_test_report = &lt;grade:action&gt; ...</code> -- if defined, used in place of <code>send_report</code> during the test phase</p>
+
+</li>
+<li><p><code>send_skipfile = &lt;skipfile&gt;</code> -- filename containing regular expressions (one per line) to match against the distribution ID (e.g. &#39;AUTHOR/Dist-Name-0.01.tar.gz&#39;); the report will not be sent if a match is found; non-absolute filename must be in the .cpanreporter config directory;</p>
+
+</li>
+</ul>
+
+<p>If these options are manually added to the configuration file, they will be included (and preserved) in subsequent interactive configuration.</p>
+
+<h2 id="Skipfile-regular-expressions">Skipfile regular expressions</h2>
+
+<p>Skip files are expected to have one regular expression per line and will be matched against the distribution ID, composed of the author&#39;s CPAN ID and the distribution tarball name.</p>
+
+<pre><code>     DAGOLDEN/CPAN-Reporter-1.00.tar.gz</code></pre>
+
+<p>Lines that begin with a sharp (#) are considered comments and will not be matched. All regular expressions will be matched case insensitive and will not be anchored unless you provide one.</p>
+
+<p>As the format of a distribution ID is &quot;AUTHOR/tarball&quot;, anchoring at the start of the line with a caret (^) will match the author and with a slash (/) will match the distribution.</p>
+
+<pre><code>     # any distributions by JOHNDOE
+     ^JOHNDOE
+     # any distributions starting with Win32
+     /Win32
+     # a particular very specific distribution
+     ^JOHNDOE/Foo-Bar-3.14</code></pre>
+
+<h1 id="CONFIGURATION-OPTIONS-FOR-DEBUGGING">CONFIGURATION OPTIONS FOR DEBUGGING</h1>
+
+<p>These options are useful for debugging only:</p>
+
+<ul>
+
+<li><p><code>debug = &lt;boolean&gt;</code> -- turns debugging on/off</p>
+
+</li>
+</ul>
+
+<h1 id="ENVIRONMENT">ENVIRONMENT</h1>
+
+<p>The following environment variables may be set to alter the default locations for CPAN::Reporter files:</p>
+
+<ul>
+
+<li><p><code>PERL_CPAN_REPORTER_DIR</code> -- if set, this directory is used in place of the default <code>.cpanreporter</code> directory; this will affect not only the location of the default <code>config.ini</code>, but also the location of the <a href="../../../../cpan/build/CPAN-Reporter-1.2006-wXxjnP/blib/lib/CPAN/Reporter/History.html">CPAN::Reporter::History</a> database and any other files that live in that directory</p>
+
+</li>
+<li><p><code>PERL_CPAN_REPORTER_CONFIG</code> -- if set, this file is used in place of the default <code>config.ini</code> file; it may be in any directory, regardless of the choice of configuration directory</p>
+
+</li>
+</ul>
+
+<h1 id="SEE-ALSO">SEE ALSO</h1>
+
+<ul>
+
+<li><p><a href="../../../../cpan/build/CPAN-Reporter-1.2006-wXxjnP/blib/lib/CPAN/Reporter.html">CPAN::Reporter</a></p>
+
+</li>
+<li><p><a href="../../../../cpan/build/CPAN-Reporter-1.2006-wXxjnP/blib/lib/CPAN/Reporter/History.html">CPAN::Reporter::History</a></p>
+
+</li>
+<li><p><a href="../../../../cpan/build/CPAN-Reporter-1.2006-wXxjnP/blib/lib/CPAN/Reporter/FAQ.html">CPAN::Reporter::FAQ</a></p>
+
+</li>
+</ul>
+
+<h1 id="AUTHOR">AUTHOR</h1>
+
+<p>David Golden &lt;dagolden@cpan.org&gt;</p>
+
+<h1 id="COPYRIGHT-AND-LICENSE">COPYRIGHT AND LICENSE</h1>
+
+<p>This software is Copyright (c) 2006 by David Golden.</p>
+
+<p>This is free software, licensed under:</p>
+
+<pre><code>  The Apache License, Version 2.0, January 2004</code></pre>
+
+
+</body>
+
+</html>
+
+

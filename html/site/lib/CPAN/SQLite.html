@@ -1,0 +1,220 @@
+<?xml version="1.0" ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<!-- saved from url=(0017)http://localhost/ -->
+<script language="JavaScript" src="../../../displayToc.js"></script>
+<script language="JavaScript" src="../../../tocParas.js"></script>
+<script language="JavaScript" src="../../../tocTab.js"></script>
+<link rel="stylesheet" type="text/css" href="../../../scineplex.css">
+<title></title>
+<link rel="stylesheet" href="../../../Active.css" type="text/css" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rev="made" href="mailto:" />
+</head>
+
+<body>
+
+
+
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#SYNOPSIS">SYNOPSIS</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a>
+    <ul>
+      <li><a href="#obj-index-args-"><code><span class="variable">$obj</span><span class="operator">-&gt;</span><span class="variable">index</span><span class="operator">(</span><span class="variable">%args</span><span class="operator">);</span>
+</code></a></li>
+      <li><a href="#obj-query-args-"><code><span class="variable">$obj</span><span class="operator">-&gt;</span><span class="variable">query</span><span class="operator">(</span><span class="variable">%args</span><span class="operator">);</span>
+</code></a></li>
+    </ul>
+  </li>
+  <li><a href="#CPAN.pm-support">CPAN.pm support</a></li>
+  <li><a href="#SEE-ALSO">SEE ALSO</a></li>
+  <li><a href="#SUPPORT">SUPPORT</a></li>
+  <li><a href="#BUGS">BUGS</a></li>
+  <li><a href="#ENVIRONMENT-VARIABLES">ENVIRONMENT VARIABLES</a></li>
+  <li><a href="#AUTHORS">AUTHORS</a></li>
+  <li><a href="#COPYRIGHT">COPYRIGHT</a></li>
+</ul>
+
+<h1 id="NAME">NAME</h1>
+
+<p>CPAN::SQLite - maintain and search a minimal CPAN database</p>
+
+<h1 id="SYNOPSIS">SYNOPSIS</h1>
+
+<pre><code>  <span class="keyword">my</span> <span class="variable">$obj</span> <span class="operator">=</span> <span class="variable">CPAN::SQLite</span><span class="operator">-&gt;</span><span class="variable">new</span><span class="operator">(</span><span class="string">CPAN</span> <span class="operator">=&gt;</span> <span class="string">'/path/to/CPAN'</span><span class="operator">);</span>
+  <span class="variable">$obj</span><span class="operator">-&gt;</span><span class="variable">index</span><span class="operator">(</span><span class="string">setup</span> <span class="operator">=&gt;</span> <span class="number">1</span><span class="operator">);</span>
+  
+  <span class="variable">$obj</span><span class="operator">-&gt;</span><span class="variable">query</span><span class="operator">(</span><span class="string">mode</span> <span class="operator">=&gt;</span> <span class="string">'dist'</span><span class="operator">,</span> <span class="string">name</span> <span class="operator">=&gt;</span> <span class="string">'CPAN'</span><span class="operator">);</span>
+  <span class="keyword">my</span> <span class="variable">$results</span> <span class="operator">=</span> <span class="variable">$obj</span><span class="operator">-&gt;</span><span class="operator">{</span><span class="string">results</span><span class="operator">}</span><span class="operator">;</span>
+</code></pre>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
+<p>This package is used for setting up, maintaining, and searching a CPAN database consisting of the information stored in the three main CPAN indices: <i>$CPAN/modules/03modlist.data.gz</i>, <i>$CPAN/modules/02packages.details.txt.gz</i>, and <i>$CPAN/authors/01mailrc.txt.gz</i>. It should be considered at an alpha stage of development.</p>
+
+<p>One begins by creating the object as</p>
+
+<pre><code>  <span class="keyword">my</span> <span class="variable">$obj</span> <span class="operator">=</span> <span class="variable">CPAN::SQLite</span><span class="operator">-&gt;</span><span class="variable">new</span><span class="operator">(</span><span class="variable">%args</span><span class="operator">);</span>
+</code></pre>
+
+<p>which accepts the following arguments:</p>
+
+<ul>
+
+<li><p><code>CPAN =&gt; &#39;/path/to/CPAN&#39;</code></p>
+
+<p>This specifies the path to where the index files are to be stored. This could be a local CPAN mirror, defined here by the presence of a <i>MIRRORED.BY</i> file beneath this directory, or a local directory in which to store these files from a remote CPAN mirror. In the latter case, the index files are fetched from a remote CPAN mirror, using the same list that <code>CPAN.pm</code> uses, if this is configured, and are updated if they are more than one day old.</p>
+
+<p>If the <code>CPAN</code> option is not given, it will default to <code>cpan_home</code> of <a>CPAN::</a>, if this is configured, with the index files found under <code>keep_source_where</code>. A fatal error results if such a directory isn&#39;t found. Updates to these index files are assumed here to be handled by <code>CPAN.pm</code>.</p>
+
+</li>
+<li><p><code>db_dir =&gt; &#39;/path/to/db/dir&#39;</code></p>
+
+<p>This specifies the path to where the database file is found. If not given, it defaults to the <code>cpan_home</code> directory of <code>CPAN.pm</code>, if present, or to the directory in which the script was invoked. The name of the database file is <code>cpandb.sql</code>.</p>
+
+</li>
+</ul>
+
+<p>There are two main methods available.</p>
+
+<h2 id="obj-index-args-"><code><span class="variable">$obj</span><span class="operator">-&gt;</span><span class="variable">index</span><span class="operator">(</span><span class="variable">%args</span><span class="operator">);</span>
+</code></h2>
+
+<p>This is used to set up and maintain the database. The following arguments are accepted:</p>
+
+<ul>
+
+<li><p>setup =&gt; 1</p>
+
+<p>This specifies that the database is to be created and populated from the CPAN indices; any exisiting database will be overwritten. Not specifying this option will assume that an existing database is to be updated.</p>
+
+</li>
+<li><p>reindex =&gt; &#39;dist_name&#39;</p>
+
+<p>This specifies that the CPAN distribution <code>dist_name</code> is to be reindexed.</p>
+
+</li>
+</ul>
+
+<h2 id="obj-query-args-"><code><span class="variable">$obj</span><span class="operator">-&gt;</span><span class="variable">query</span><span class="operator">(</span><span class="variable">%args</span><span class="operator">);</span>
+</code></h2>
+
+<p>This is used for querying the database by distribution name, module name, or CPAN author name. There are two arguments needed to specify such queries.</p>
+
+<ul>
+
+<li><p><code>mode =&gt; some_value</code></p>
+
+<p>This specifies what type of query to perform, with <code>mode</code> being one of <code>dist</code>, <code>module</code>, or <code>author</code>, for searching through, respectively, CPAN distribution names, module names, or author names and CPAN ids.</p>
+
+</li>
+<li><p><code>type =&gt; query_term</code></p>
+
+<p>This specifies the query term for the search, with <code>type</code> being one of <code>name</code>, to search for an exact match, or <code>search</code>, for searching for partial matches. Perl regular expressions are supported in the <code>query_term</code> for the <code>search</code> option.</p>
+
+</li>
+</ul>
+
+<p>As well, an option of <code>max_results =&gt; some_number</code> will limit the number of results returned; if not specified, this defaults to 200.</p>
+
+<h1 id="CPAN.pm-support">CPAN.pm support</h1>
+
+<p>As of CPAN.pm version 1.88_65, there is experimental support within CPAN.pm for using CPAN::SQLite to obtain information on packages, modules, and authors. One goal of this is to reduce the memory footprint of the CPAN.pm shell, as this information is no longer all preloaded into memory. This can be enabled through</p>
+
+<pre><code>   perl -MCPAN -e shell
+   cpan&gt; o conf use_sqlite 1</code></pre>
+
+<p>Use</p>
+
+<pre><code>  cpan&gt; o conf commit</code></pre>
+
+<p>to save this setting for future sessions.</p>
+
+<p>Using CPAN::SQLite, what happens is that a request for information through CPAN.pm, such as</p>
+
+<pre><code>  cpan&gt; a ANDK</code></pre>
+
+<p>will cause a query to the SQLite database to be made. If successful, this will place the relevant data for this request into the data structure CPAN.pm uses to store and retrieve such information. Thus, at any given time, the only information CPAN.pm stores in memory is that for packages, modules, and authors for which previous queries have been made. There are certain requests, such as</p>
+
+<pre><code>  cpan&gt; r</code></pre>
+
+<p>to make a list of recommended packages for which upgrades on CPAN are available, which will result in loading information on all available packages into memory; if such a query is made, the subsequent memory footprint of CPAN.pm with and without CPAN::SQLite will be essentially the same.</p>
+
+<p>The database itself, called <i>cpandb.sql</i>, will be stored in the location specified by <code><span class="variable">$CPAN::Config</span><span class="operator">-&gt;</span><span class="operator">{</span><span class="string">cpan_home</span><span class="operator">}</span>
+</code>. When first started, this database will be created, and afterwards, it will be updated if the database is older than one day since the last update. A log file of the creation or update process, called <i>cpan_search_log.dddddddddd</i>, will be created in the same directory as the database file.</p>
+
+<h1 id="SEE-ALSO">SEE ALSO</h1>
+
+<p><a href="../../../cpan/build/CPAN-SQLite-0.202-YFPAex/blib/lib/CPAN/SQLite/Index.html">CPAN::SQLite::Index</a>, for setting up and maintaining the database, and <a href="../../../cpan/build/CPAN-SQLite-0.202-YFPAex/blib/lib/CPAN/SQLite/Search.html">CPAN::SQLite::Search</a> for an interface to querying the database. Some details of the interaction with <a>CPAN::</a> is available from <a href="../../../cpan/build/CPAN-SQLite-0.202-YFPAex/blib/lib/CPAN/SQLite/META.html">CPAN::SQLite::META</a>. See also the <a href="../../../cpan/build/CPAN-SQLite-0.202-YFPAex/blib/script/cpandb.html">cpandb</a> script for a command-line interface to the indexing and querying of the database.</p>
+
+<p>Development takes place on the CPAN-Search-Lite project at <a href="http://cpan-search.svn.sourceforge.net/viewvc/cpan-search/CPAN-SQLite/">http://cpan-search.svn.sourceforge.net/viewvc/cpan-search/CPAN-SQLite/</a>.</p>
+
+<h1 id="SUPPORT">SUPPORT</h1>
+
+<p>You can find documentation for this module with the perldoc command.</p>
+
+<pre><code>    perldoc CPAN::SQLite</code></pre>
+
+<p>You can also look for information at:</p>
+
+<ul>
+
+<li><p>AnnoCPAN: Annotated CPAN documentation</p>
+
+<p><a href="http://annocpan.org/dist/CPAN-SQLite">http://annocpan.org/dist/CPAN-SQLite</a></p>
+
+</li>
+<li><p>CPAN::Forum: Discussion forum</p>
+
+<p><a href="http:///www.cpanforum.com/dist/CPAN-SQLite">http:///www.cpanforum.com/dist/CPAN-SQLite</a></p>
+
+</li>
+<li><p>CPAN Ratings</p>
+
+<p><a href="http://cpanratings.perl.org/d/CPAN-SQLite">http://cpanratings.perl.org/d/CPAN-SQLite</a></p>
+
+</li>
+<li><p>RT: CPAN&#39;s request tracker</p>
+
+<p><a href="http://rt.cpan.org/NoAuth/Bugs.html?Dist=CPAN-SQLite">http://rt.cpan.org/NoAuth/Bugs.html?Dist=CPAN-SQLite</a></p>
+
+</li>
+<li><p>Search CPAN</p>
+
+<p><a href="http://search.cpan.org/dist/CPAN-SQLite">http://search.cpan.org/dist/CPAN-SQLite</a></p>
+
+</li>
+</ul>
+
+<h1 id="BUGS">BUGS</h1>
+
+<p>At this time, CPAN::SQLite keeps information contained only in the latest version of a CPAN distribution. This means that modules that are provided only in older versions of a CPAN distribution will not be present in the database; for example, at this time, the latest version of the <i>libwww-perl</i> distribution on CPAN is 5.805, but there are modules such as <i>URI::URL::finger</i> contained in version 5.10 of libwww-perl that are not present in 5.805. This behaviour differs from that of <a>CPAN::</a> without CPAN::SQLite. This may change in the future.</p>
+
+<p>Please report bugs and feature requests via <a href="http://rt.cpan.org/NoAuth/Bugs.html?Dist=CPAN-SQLite">http://rt.cpan.org/NoAuth/Bugs.html?Dist=CPAN-SQLite</a>.</p>
+
+<h1 id="ENVIRONMENT-VARIABLES">ENVIRONMENT VARIABLES</h1>
+
+<p>Information messages from the indexing procedures are printed out to STDOUT if the environment variable CPAN_SQLITE_DEBUG is set. This is automatically set within <a href="../../../cpan/build/CPAN-SQLite-0.202-YFPAex/blib/lib/CPAN/SQLite/Index.html">CPAN::SQLite::Index</a>. If CPAN_SQLITE_NO_LOG_FILES is set, no log files will be created during the indexing procedures.</p>
+
+<h1 id="AUTHORS">AUTHORS</h1>
+
+<p>Randy Kobes (passed away on September 18, 2010)</p>
+
+<p>Serguei Trouchelle &lt;stro@cpan.org&gt;</p>
+
+<h1 id="COPYRIGHT">COPYRIGHT</h1>
+
+<p>Copyright 2006,2008 by Randy Kobes &lt;r.kobes@uwinnipeg.ca&gt;.</p>
+
+<p>Copyright 2011 by Serguei Trouchelle &lt;stro@cpan.org&gt;.</p>
+
+<p>Use and redistribution are under the same terms as Perl itself.</p>
+
+
+</body>
+
+</html>
+
+

@@ -1,0 +1,151 @@
+<?xml version="1.0" ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<!-- saved from url=(0017)http://localhost/ -->
+<script language="JavaScript" src="../../../displayToc.js"></script>
+<script language="JavaScript" src="../../../tocParas.js"></script>
+<script language="JavaScript" src="../../../tocTab.js"></script>
+<link rel="stylesheet" type="text/css" href="../../../scineplex.css">
+<title></title>
+<link rel="stylesheet" href="../../../Active.css" type="text/css" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rev="made" href="mailto:" />
+</head>
+
+<body>
+
+
+
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#SYNOPSIS">SYNOPSIS</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
+  <li><a href="#METHODS">METHODS</a></li>
+  <li><a href="#AUTHOR">AUTHOR</a></li>
+  <li><a href="#COPYRIGHT">COPYRIGHT</a></li>
+</ul>
+
+<h1 id="NAME">NAME</h1>
+
+<p>Probe::Perl - Information about the currently running perl</p>
+
+<h1 id="SYNOPSIS">SYNOPSIS</h1>
+
+<pre><code> <span class="keyword">use</span> <span class="variable">Probe::Perl</span><span class="operator">;</span>
+ <span class="variable">$p</span> <span class="operator">=</span> <span class="variable">Probe::Perl</span><span class="operator">-&gt;</span><span class="variable">new</span><span class="operator">();</span>
+ 
+ <span class="comment"># Version of this perl as a floating point number</span>
+ <span class="variable">$ver</span> <span class="operator">=</span> <span class="variable">$p</span><span class="operator">-&gt;</span><span class="variable">perl_version</span><span class="operator">();</span>
+ <span class="variable">$ver</span> <span class="operator">=</span> <span class="variable">Probe::Perl</span><span class="operator">-&gt;</span><span class="variable">perl_version</span><span class="operator">();</span>
+ 
+ <span class="comment"># Convert a multi-dotted string to a floating point number</span>
+ <span class="variable">$ver</span> <span class="operator">=</span> <span class="variable">$p</span><span class="operator">-&gt;</span><span class="variable">perl_version_to_float</span><span class="operator">(</span><span class="variable">$ver</span><span class="operator">);</span>
+ <span class="variable">$ver</span> <span class="operator">=</span> <span class="variable">Probe::Perl</span><span class="operator">-&gt;</span><span class="variable">perl_version_to_float</span><span class="operator">(</span><span class="variable">$ver</span><span class="operator">);</span>
+ 
+ <span class="comment"># Check if the given perl is the same as the one currently running</span>
+ <span class="variable">$bool</span> <span class="operator">=</span> <span class="variable">$p</span><span class="operator">-&gt;</span><span class="variable">perl_is_same</span><span class="operator">(</span><span class="variable">$perl_path</span><span class="operator">);</span>
+ <span class="variable">$bool</span> <span class="operator">=</span> <span class="variable">Probe::Perl</span><span class="operator">-&gt;</span><span class="variable">perl_is_same</span><span class="operator">(</span><span class="variable">$perl_path</span><span class="operator">);</span>
+ 
+ <span class="comment"># Find a path to the currently-running perl</span>
+ <span class="variable">$path</span> <span class="operator">=</span> <span class="variable">$p</span><span class="operator">-&gt;</span><span class="variable">find_perl_interpreter</span><span class="operator">();</span>
+ <span class="variable">$path</span> <span class="operator">=</span> <span class="variable">Probe::Perl</span><span class="operator">-&gt;</span><span class="variable">find_perl_interpreter</span><span class="operator">();</span>
+ 
+ <span class="comment"># Get @INC before run-time additions</span>
+ <span class="variable">@paths</span> <span class="operator">=</span> <span class="variable">$p</span><span class="operator">-&gt;</span><span class="variable">perl_inc</span><span class="operator">();</span>
+ <span class="variable">@paths</span> <span class="operator">=</span> <span class="variable">Probe::Perl</span><span class="operator">-&gt;</span><span class="variable">perl_inc</span><span class="operator">();</span>
+ 
+ <span class="comment"># Get the general type of operating system</span>
+ <span class="variable">$type</span> <span class="operator">=</span> <span class="variable">$p</span><span class="operator">-&gt;</span><span class="variable">os_type</span><span class="operator">();</span>
+ <span class="variable">$type</span> <span class="operator">=</span> <span class="variable">Probe::Perl</span><span class="operator">-&gt;</span><span class="variable">os_type</span><span class="operator">();</span>
+ 
+ <span class="comment"># Access Config.pm values</span>
+ <span class="variable">$val</span> <span class="operator">=</span> <span class="variable">$p</span><span class="operator">-&gt;</span><span class="variable">config</span><span class="operator">(</span><span class="string">'foo'</span><span class="operator">);</span>
+ <span class="variable">$val</span> <span class="operator">=</span> <span class="variable">Probe::Perl</span><span class="operator">-&gt;</span><span class="variable">config</span><span class="operator">(</span><span class="string">'foo'</span><span class="operator">);</span>
+ <span class="variable">$p</span><span class="operator">-&gt;</span><span class="variable">config</span><span class="operator">(</span><span class="string">'foo'</span> <span class="operator">=&gt;</span> <span class="string">'bar'</span><span class="operator">);</span>  <span class="comment"># Set locally</span>
+ <span class="variable">$p</span><span class="operator">-&gt;</span><span class="variable">config_revert</span><span class="operator">(</span><span class="string">'foo'</span><span class="operator">);</span>  <span class="comment"># Revert</span>
+</code></pre>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
+<p>This module provides methods for obtaining information about the currently running perl interpreter. It originally began life as code in the <code>Module::Build</code> project, but has been externalized here for general use.</p>
+
+<h1 id="METHODS">METHODS</h1>
+
+<dl>
+
+<dt id="new-">new()</dt>
+<dd>
+
+<p>Creates a new Probe::Perl object and returns it. Most methods in the Probe::Perl packages are available as class methods, so you don&#39;t always need to create a new object. But if you want to create a mutable view of the <code>Config.pm</code> data, it&#39;s necessary to create an object to store the values in.</p>
+
+</dd>
+<dt id="config-key-value-">config( $key [, $value] )</dt>
+<dd>
+
+<p>Returns the <code>Config.pm</code> value associated with <code>$key</code>. If <code>$value</code> is also specified, then the value is set to <code>$value</code> for this view of the data. In this case, <code>config()</code> must be called as an object method, not a class method.</p>
+
+</dd>
+<dt id="config_revert-key-">config_revert( $key )</dt>
+<dd>
+
+<p>Removes any user-assigned value in this view of the <code>Config.pm</code> data.</p>
+
+</dd>
+<dt id="find_perl_interpreter-">find_perl_interpreter( )</dt>
+<dd>
+
+<p>Returns the absolute path of this perl interpreter. This is actually sort of a tricky thing to discover sometimes - in these cases we use <code>perl_is_same()</code> to verify.</p>
+
+</dd>
+<dt id="perl_version-">perl_version( )</dt>
+<dd>
+
+<p>Returns the version of this perl interpreter as a perl-styled version number using <code>perl_version_to_float()</code>. Uses <code>$^V</code> if your perl is recent enough, otherwise uses <code>$]</code>.</p>
+
+</dd>
+<dt id="perl_version_to_float-version-">perl_version_to_float( $version )</dt>
+<dd>
+
+<p>Formats <code>$version</code> as a perl-styled version number like <code>5.008001</code>.</p>
+
+</dd>
+<dt id="perl_is_same-perl-">perl_is_same( $perl )</dt>
+<dd>
+
+<p>Given the name of a perl interpreter, this method determines if it has the same configuration as the one represented by the current perl instance. Usually this means it&#39;s exactly the same</p>
+
+</dd>
+<dt id="perl_inc-">perl_inc( )</dt>
+<dd>
+
+<p>Returns a list of directories in this perl&#39;s <code>@INC</code> path, <i>before</i> any entries from <code>use lib</code>, <code><span class="variable">$ENV</span><span class="operator">{</span><span class="string">PERL5LIB</span><span class="operator">}</span>
+</code>, or <code>-I</code> switches are added.</p>
+
+</dd>
+<dt id="os_type-osname-">os_type( [$osname] )</dt>
+<dd>
+
+<p>Returns a generic OS type (e.g. &quot;Unix&quot;, &quot;Windows&quot;, &quot;MacOS&quot;) for the given OS name. If no OS name is given it uses the value in $^O, which is the same as $Config{osname}.</p>
+
+</dd>
+</dl>
+
+<h1 id="AUTHOR">AUTHOR</h1>
+
+<p>Randy W. Sims &lt;randys@thepierianspring.org&gt;</p>
+
+<p>Based partly on code from the Module::Build project, by Ken Williams &lt;kwilliams@cpan.org&gt; and others.</p>
+
+<h1 id="COPYRIGHT">COPYRIGHT</h1>
+
+<p>Copyright 2005 Ken Williams and Randy Sims. All rights reserved.</p>
+
+<p>This library is free software; you can redistribute it and/or modify it under the same terms as Perl itself.</p>
+
+
+</body>
+
+</html>
+
+

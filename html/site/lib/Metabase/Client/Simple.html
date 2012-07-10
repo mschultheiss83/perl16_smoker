@@ -1,0 +1,124 @@
+<?xml version="1.0" ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<!-- saved from url=(0017)http://localhost/ -->
+<script language="JavaScript" src="../../../../displayToc.js"></script>
+<script language="JavaScript" src="../../../../tocParas.js"></script>
+<script language="JavaScript" src="../../../../tocTab.js"></script>
+<link rel="stylesheet" type="text/css" href="../../../../scineplex.css">
+<title></title>
+<link rel="stylesheet" href="../../../../Active.css" type="text/css" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rev="made" href="mailto:" />
+</head>
+
+<body>
+
+
+
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#VERSION">VERSION</a></li>
+  <li><a href="#SYNOPSIS">SYNOPSIS</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
+  <li><a href="#METHODS">METHODS</a>
+    <ul>
+      <li><a href="#new">new</a></li>
+      <li><a href="#submit_fact">submit_fact</a></li>
+      <li><a href="#guid_exists">guid_exists</a></li>
+      <li><a href="#register">register</a></li>
+    </ul>
+  </li>
+  <li><a href="#AUTHORS">AUTHORS</a></li>
+  <li><a href="#COPYRIGHT-AND-LICENSE">COPYRIGHT AND LICENSE</a></li>
+</ul>
+
+<h1 id="NAME">NAME</h1>
+
+<p>Metabase::Client::Simple - a client that submits to Metabase servers</p>
+
+<h1 id="VERSION">VERSION</h1>
+
+<p>version 0.008</p>
+
+<h1 id="SYNOPSIS">SYNOPSIS</h1>
+
+<pre><code>  <span class="keyword">use</span> <span class="variable">Metabase::Client::Simple</span><span class="operator">;</span>
+  <span class="keyword">use</span> <span class="variable">Metabase::User::Profile</span><span class="operator">;</span>
+  <span class="keyword">use</span> <span class="variable">Metabase::User::Secret</span><span class="operator">;</span>
+  
+  <span class="keyword">my</span> <span class="variable">$profile</span> <span class="operator">=</span> <span class="variable">Metabase::User::Profile</span><span class="operator">-&gt;</span><span class="variable">load</span><span class="operator">(</span><span class="string">'user.profile.json'</span><span class="operator">);</span>
+  <span class="keyword">my</span> <span class="variable">$secret</span>  <span class="operator">=</span> <span class="variable">Metabase::User::Secret</span> <span class="operator">-&gt;</span><span class="variable">load</span><span class="operator">(</span><span class="string">'user.secret.json'</span> <span class="operator">);</span>
+  
+  <span class="keyword">my</span> <span class="variable">$client</span> <span class="operator">=</span> <span class="variable">Metabase::Client::Simple</span><span class="operator">-&gt;</span><span class="variable">new</span><span class="operator">(</span><span class="operator">{</span>
+    <span class="string">profile</span> <span class="operator">=&gt;</span> <span class="variable">$profile</span><span class="operator">,</span>
+    <span class="string">secret</span>  <span class="operator">=&gt;</span> <span class="variable">$secret</span><span class="operator">,</span>
+    <span class="string">uri</span>     <span class="operator">=&gt;</span> <span class="string">'http://metabase.example.com/'</span><span class="operator">,</span>
+  <span class="operator">}</span><span class="operator">);</span>
+  
+  <span class="keyword">my</span> <span class="variable">$fact</span> <span class="operator">=</span> <span class="variable">generate_metabase_fact</span><span class="operator">;</span>
+  
+  <span class="variable">$client</span><span class="operator">-&gt;</span><span class="variable">submit_fact</span><span class="operator">(</span><span class="variable">$fact</span><span class="operator">);</span>
+</code></pre>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
+<p>Metabase::Client::Simple provides is extremely simple, lightweight library for submitting facts to a <a>Metabase</a> web server.</p>
+
+<h1 id="METHODS">METHODS</h1>
+
+<h2 id="new">new</h2>
+
+<pre><code>  my $client = Metabase::Client::Simple-&gt;new(\%arg)</code></pre>
+
+<p>This is the object constructor.</p>
+
+<p>Valid arguments are:</p>
+
+<pre><code>  profile - a Metabase::User::Profile object
+  secret  - a Metabase::User::Secret object
+  uri     - the root URI for the metabase server</code></pre>
+
+<p>If you use a <code>uri</code> argument with the &#39;https&#39; scheme, you must have Crypt::SSLeay or IO::Socket::SSL installed.</p>
+
+<h2 id="submit_fact">submit_fact</h2>
+
+<pre><code>  <span class="variable">$client</span><span class="operator">-&gt;</span><span class="variable">submit_fact</span><span class="operator">(</span><span class="variable">$fact</span><span class="operator">);</span>
+</code></pre>
+
+<p>This method will submit a <a href="../../../../site/lib/Metabase/Fact.html">Metabase::Fact</a> object to the client&#39;s server. On success, it will return a true value. On failure, it will raise an exception.</p>
+
+<h2 id="guid_exists">guid_exists</h2>
+
+<pre><code>  <span class="variable">$client</span><span class="operator">-&gt;</span><span class="variable">guid_exists</span><span class="operator">(</span><span class="string">'2f8519c6-24cf-11df-90b1-0018f34ec37c'</span><span class="operator">);</span>
+</code></pre>
+
+<p>This method will check whether the given GUID is found on the metabase server. The GUID must be in lower-case, string form. It will return true or false. Note that a server error will also result in a false value.</p>
+
+<h2 id="register">register</h2>
+
+<pre><code>  <span class="variable">$client</span><span class="operator">-&gt;</span><span class="variable">register</span><span class="operator">;</span>
+</code></pre>
+
+<p>This method will submit the user credentials to the metabase server. It will be called automatically by <code>submit_fact</code> if necessary. You generally won&#39;t need to use it. On success, it will return a true value. On failure, it will raise an exception.</p>
+
+<h1 id="AUTHORS">AUTHORS</h1>
+
+<pre><code>  David Golden &lt;dagolden@cpan.org&gt;
+  Ricardo Signes &lt;rjbs@cpan.org&gt;</code></pre>
+
+<h1 id="COPYRIGHT-AND-LICENSE">COPYRIGHT AND LICENSE</h1>
+
+<p>This software is Copyright (c) 2010 by David Golden.</p>
+
+<p>This is free software, licensed under:</p>
+
+<pre><code>  The Apache License, Version 2.0, January 2004</code></pre>
+
+
+</body>
+
+</html>
+
+

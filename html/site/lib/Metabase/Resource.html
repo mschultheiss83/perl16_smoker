@@ -1,0 +1,210 @@
+<?xml version="1.0" ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<!-- saved from url=(0017)http://localhost/ -->
+<script language="JavaScript" src="../../../displayToc.js"></script>
+<script language="JavaScript" src="../../../tocParas.js"></script>
+<script language="JavaScript" src="../../../tocTab.js"></script>
+<link rel="stylesheet" type="text/css" href="../../../scineplex.css">
+<title></title>
+<link rel="stylesheet" href="../../../Active.css" type="text/css" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rev="made" href="mailto:" />
+</head>
+
+<body>
+
+
+
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#VERSION">VERSION</a></li>
+  <li><a href="#SYNOPSIS">SYNOPSIS</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
+  <li><a href="#COMMON-METHODS">COMMON METHODS</a>
+    <ul>
+      <li><a href="#new">new</a></li>
+      <li><a href="#resource">resource</a></li>
+      <li><a href="#scheme">scheme</a></li>
+      <li><a href="#cache-private-">_cache (private)</a></li>
+    </ul>
+  </li>
+  <li><a href="#OVERLOADING">OVERLOADING</a></li>
+  <li><a href="#SUBCLASSING-AND-SUBCLASS-METHODS">SUBCLASSING AND SUBCLASS METHODS</a>
+    <ul>
+      <li><a href="#validate">validate</a></li>
+      <li><a href="#metadata">metadata</a></li>
+      <li><a href="#metadata_types">metadata_types</a></li>
+    </ul>
+  </li>
+  <li><a href="#BUGS">BUGS</a></li>
+  <li><a href="#AUTHORS">AUTHORS</a></li>
+  <li><a href="#COPYRIGHT-AND-LICENSE">COPYRIGHT AND LICENSE</a></li>
+</ul>
+
+<h1 id="NAME">NAME</h1>
+
+<p>Metabase::Resource - factory class for Metabase resource descriptors</p>
+
+<h1 id="VERSION">VERSION</h1>
+
+<p>version 0.021</p>
+
+<h1 id="SYNOPSIS">SYNOPSIS</h1>
+
+<pre><code>  <span class="keyword">my</span> <span class="variable">$resource</span> <span class="operator">=</span> <span class="variable">Metabase::Resource</span><span class="operator">-&gt;</span><span class="variable">new</span><span class="operator">(</span>
+    <span class="string">'cpan:///distfile/RJBS/Metabase-Fact-0.001.tar.gz'</span><span class="operator">,</span>
+  <span class="operator">);</span>
+  
+  <span class="keyword">my</span> <span class="variable">$resource_meta</span> <span class="operator">=</span> <span class="variable">$resource</span><span class="operator">-&gt;</span><span class="variable">metadata</span><span class="operator">;</span>
+  <span class="keyword">my</span> <span class="variable">$typemap</span>       <span class="operator">=</span> <span class="variable">$resource</span><span class="operator">-&gt;</span><span class="variable">metadata_types</span><span class="operator">;</span>
+</code></pre>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
+<p><a>Metabase</a> is a framework for associating metadata with arbitrary resources. A Metabase can be used to store test reports, reviews, coverage analysis reports, reports on static analysis of coding style, or anything else for which <a href="../../../cpan/build/Metabase-Fact-0.021-fbjRp3/blib/lib/Metabase/Fact.html">Metabase::Fact</a> types are constructed.</p>
+
+<p>Resources in Metabase are URI&#39;s that consist of a scheme and scheme specific information. For example, a standard URI framework for a CPAN distribution is defined by the <a>URI::cpan</a> class.</p>
+
+<pre><code>  cpan:///distfile/RJBS/URI-cpan-1.000.tar.gz</code></pre>
+
+<p>Metabase::Resource is a factory class for resource descriptors. It provide a common interface to extract scheme-specific indexing metadata from a scheme-specific resource subclass.</p>
+
+<p>For example, the <a href="../../../cpan/build/Metabase-Fact-0.021-fbjRp3/blib/lib/Metabase/Resource/cpan.html">Metabase::Resource::cpan</a> class will deconstruct the example above this into a Metabase resource metadata structure with the following elements:</p>
+
+<pre><code>  type         =&gt; Metabase-Resource-cpan-distfile
+  dist_file    =&gt; RJBS/URI-cpan-1.000.tar.gz
+  cpan_id      =&gt; RJBS
+  dist_name    =&gt; URI-cpan
+  dist_version =&gt; 1.000</code></pre>
+
+<p>Only the <code>type</code> field is mandatory for all resources. The other fields are all specific to Metabase::Resource::cpan.</p>
+
+<h1 id="COMMON-METHODS">COMMON METHODS</h1>
+
+<h2 id="new">new</h2>
+
+<pre><code>  <span class="keyword">my</span> <span class="variable">$resource</span> <span class="operator">=</span> <span class="variable">Metabase::Resource</span><span class="operator">-&gt;</span><span class="variable">new</span><span class="operator">(</span>
+    <span class="string">'cpan:///distfile/RJBS/Metabase-Fact-0.001.tar.gz'</span><span class="operator">,</span>
+  <span class="operator">);</span>
+</code></pre>
+
+<p>Takes a single resource string argument and constructs a new Resource object from a resource subtype determined by the URI scheme. Throws an error if the required resource subclass is not available.</p>
+
+<h2 id="resource">resource</h2>
+
+<p>Returns the string used to initialize the resource object.</p>
+
+<h2 id="scheme">scheme</h2>
+
+<p>Returns a string containing the scheme.</p>
+
+<h2 id="cache-private-">_cache (private)</h2>
+
+<p>Returns a hash reference for subclasses to use to store data derived from the <code>content</code> string.</p>
+
+<h1 id="OVERLOADING">OVERLOADING</h1>
+
+<p>Resources have stringification overloaded to call <code>content</code>. Equality (==) and inequality (!=) are overloaded to perform string comparison instead.</p>
+
+<h1 id="SUBCLASSING-AND-SUBCLASS-METHODS">SUBCLASSING AND SUBCLASS METHODS</h1>
+
+<p>Metabase::Resource relies on subclasses to implement scheme-specific parsing of the URI into relevant index metadata.</p>
+
+<p>Subclasses SHOULD NOT implement a <code>new</code> constructor, as the Metabase::Resource constructor will load the subclass, construct the object, bless the object into the subclass, and and then call <code>validate</code> on the object. Subclasses MAY store structured data derived from the content string during validation.</p>
+
+<p>Subclasses SHOULD use the <code>content</code> method to access the resource string and the <code>scheme</code> method to access the scheme. Subclasses MAY use the <code>_cache</code> accessor to store derived metadata data. Subclasses MUST provide a <code>metadata_types</code> method to return data types for all elements stored in <code>_cache</code>.</p>
+
+<p>All subclasses MUST implement the <code>validate</code>, <code>metadata</code> and <code>metadata_types</code> methods, as described below.</p>
+
+<p>All methods MUST throw an exception if an error occurs.</p>
+
+<h2 id="validate">validate</h2>
+
+<pre><code>  $resource-&gt;validate</code></pre>
+
+<p>This method is called by the constructor. It SHOULD return true if the resource string is valid according to scheme-specific rules. It MUST die if the resource string is invalid.</p>
+
+<h2 id="metadata">metadata</h2>
+
+<pre><code>  <span class="variable">$meta</span> <span class="operator">=</span> <span class="variable">$resource</span><span class="operator">-&gt;</span><span class="variable">metadata</span><span class="operator">;</span>
+</code></pre>
+
+<p>This method MUST return a hash reference with resource-specific indexing metadata for the Resource. The key MUST be the name of the field for indexing. The <code>scheme</code> key MUST be present and the <code>scheme</code> value MUST be identical to the string from the <code>scheme</code> accessor. Other keys SHOULD provide dimensions to differentiate one resource from another in the context of <code>scheme</code>. If a scheme has subcategories, the key <code>type</code> SHOULD be used for the subcategory. Values MUST be simple scalars, not references.</p>
+
+<p>Here is a hypothetical example of a <code>metadata</code> function for a metabase user resource like &#39;metabase:user:ec2726a4-070c-11df-a2e0-0018f34ec37c&#39;:</p>
+
+<pre><code>  <span class="keyword">sub</span><span class="variable"> metadata </span><span class="operator">{</span>
+    <span class="keyword">my</span> <span class="variable">$self</span> <span class="operator">=</span> <span class="keyword">shift</span><span class="operator">;</span>
+    <span class="keyword">my</span> <span class="operator">(</span><span class="variable">$uuid</span><span class="operator">)</span> <span class="operator">=</span> <span class="variable">$self</span> <span class="operator">=~</span> <span class="regex">m{\Ametabase:user:(.+)\z}</span><span class="operator">;</span>
+    <span class="keyword">return</span> <span class="operator">{</span>
+      <span class="string">scheme</span>  <span class="operator">=&gt;</span> <span class="string">'metabase'</span><span class="operator">,</span>
+      <span class="string">type</span>    <span class="operator">=&gt;</span> <span class="string">'user'</span><span class="operator">,</span>
+      <span class="string">user</span>    <span class="operator">=&gt;</span> <span class="variable">$uuid</span><span class="operator">,</span>
+    <span class="operator">}</span>
+  <span class="operator">}</span>
+</code></pre>
+
+<p>Field names should be valid perl identifiers, consisting of alphanumeric characters or underscores. Hyphens and periods are allowed, but are not recommended.</p>
+
+<h2 id="metadata_types">metadata_types</h2>
+
+<pre><code>  <span class="keyword">my</span> <span class="variable">$typemap</span> <span class="operator">=</span> <span class="variable">$resource</span><span class="operator">-&gt;</span><span class="variable">metadata_types</span><span class="operator">;</span>
+</code></pre>
+
+<p>This method is used to identify the datatypes of keys in the data structure provided by <code>metadata</code>. It MUST return a hash reference. It SHOULD contain a key for every key that could appear in the data structure generated by <code>metadata</code> and provide a value corresponding to a datatype for each key. It MAY contain keys that do not always appear in the result of <code>metadata</code>.</p>
+
+<p>Data types are loosely based on <a>Data::RX</a>. Type SHOULD be one of the following:</p>
+
+<pre><code>  &#39;//str&#39; -- indicates a value that should be compared stringwise
+  &#39;//num&#39; -- indicates a value that should be compared numerically</code></pre>
+
+<p>Here is a hypothetical example of a <code>metadata_types</code> function for a metabase user resource like &#39;metabase:user:ec2726a4-070c-11df-a2e0-0018f34ec37c&#39;:</p>
+
+<pre><code>  <span class="keyword">sub</span><span class="variable"> metadata_types </span><span class="operator">{</span>
+    <span class="keyword">return</span> <span class="operator">{</span>
+      <span class="string">scheme</span>  <span class="operator">=&gt;</span> <span class="string">'//str'</span><span class="operator">,</span>
+      <span class="string">type</span>    <span class="operator">=&gt;</span> <span class="string">'//str'</span><span class="operator">,</span>
+      <span class="string">user</span>    <span class="operator">=&gt;</span> <span class="string">'//str'</span><span class="operator">,</span>
+    <span class="operator">}</span>
+  <span class="operator">}</span>
+</code></pre>
+
+<p>Consumers of <code>metadata_types</code> SHOULD assume that any <code>metadata</code> key not found in the result of <code>metadata_types</code> is a &#39;//str&#39; resource.</p>
+
+<h1 id="BUGS">BUGS</h1>
+
+<p>Please report any bugs or feature using the CPAN Request Tracker. Bugs can be submitted through the web interface at <a href="http://rt.cpan.org/Dist/Display.html?Queue=Metabase-Fact">http://rt.cpan.org/Dist/Display.html?Queue=Metabase-Fact</a></p>
+
+<p>When submitting a bug or request, please include a test-file or a patch to an existing test-file that illustrates the bug or desired feature.</p>
+
+<h1 id="AUTHORS">AUTHORS</h1>
+
+<ul>
+
+<li><p>David Golden &lt;dagolden@cpan.org&gt;</p>
+
+</li>
+<li><p>Ricardo Signes &lt;rjbs@cpan.org&gt;</p>
+
+</li>
+<li><p>H.Merijn Brand &lt;hmbrand@cpan.org&gt;</p>
+
+</li>
+</ul>
+
+<h1 id="COPYRIGHT-AND-LICENSE">COPYRIGHT AND LICENSE</h1>
+
+<p>This software is Copyright (c) 2012 by David Golden.</p>
+
+<p>This is free software, licensed under:</p>
+
+<pre><code>  The Apache License, Version 2.0, January 2004</code></pre>
+
+
+</body>
+
+</html>
+
+

@@ -1,0 +1,8 @@
+/cpan/build
+/cpan/sources
+/cpan/.lock
+/cpan/FTPstats.yml
+/cpan/Metadata
+/cpan/cpan_sqlite_log.*
+/cpan/cpandb.sql
+/cpan/histfile

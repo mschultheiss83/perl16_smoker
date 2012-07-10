@@ -1,0 +1,36 @@
+=head1 ActivePerl 5.16 Change Log
+
+For the latest information on ActivePerl, please see:
+
+    http://www.ActiveState.com/ActivePerl/
+
+=head2 Build 1600 Jun 1, 2012
+
+I<What's new in the 1600 Series>
+
+=over 3
+
+=item *
+
+This build corresponds to the Perl 5.16.0 source code release.
+
+=item *
+
+The 1600 series builds of ActivePerl are not binary compatible with
+builds in the 600, 800, 1000, 1200 or 1400 series.  Any extensions built using binaries
+from the ActivePerl 600, 800, 1000, 1200 or 1400 series will need to be recompiled.
+Note especially that this applies to PPM packages that may have been
+built for 600, 800, 1000, 1200 or 1400 series builds.
+
+=item *
+
+Significant changes that have occurred in the 5.16.0 release
+are documented in L<perl5160delta>.
+
+=item *
+
+Most bundled distributions have been updated to their latest released
+version from CPAN.  Use the C<ppm list> command to check the exact
+version included in this release.
+
+=back

@@ -1,0 +1,30 @@
+---
+comment: "no Acme stuff"
+match:
+ distribution: "/Acme-"
+disabled: 1
+---
+comment: "no plugin bundles"
+match:
+ distribution: "PluginBundle"
+disabled: 1
+---
+comment: "no tasks"
+match:
+ distribution: "/Task-"
+disabled: 1
+---
+comment: "no tasks"
+match:
+ distribution: "-Task-"
+disabled: 1
+---
+comment: "no bundles"
+match:
+ distribution: "/Bundle-"
+disabled: 1
+---
+comment: "tapper doesn't work on anything but linux and the maintainers don't know how to use Makefile.PL"
+match:
+ distribution: "/Tapper-"
+disabled: 1

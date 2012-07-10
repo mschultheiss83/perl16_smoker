@@ -1,0 +1,132 @@
+<?xml version="1.0" ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<!-- saved from url=(0017)http://localhost/ -->
+<script language="JavaScript" src="../../../../displayToc.js"></script>
+<script language="JavaScript" src="../../../../tocParas.js"></script>
+<script language="JavaScript" src="../../../../tocTab.js"></script>
+<link rel="stylesheet" type="text/css" href="../../../../scineplex.css">
+<title></title>
+<link rel="stylesheet" href="../../../../Active.css" type="text/css" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rev="made" href="mailto:" />
+</head>
+
+<body>
+
+
+
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#VERSION">VERSION</a></li>
+  <li><a href="#REPORT-GRADES">REPORT GRADES</a>
+    <ul>
+      <li><a href="#Why-did-I-receive-a-report-">Why did I receive a report?</a></li>
+      <li><a href="#Why-was-a-report-sent-if-a-prerequisite-is-missing-">Why was a report sent if a prerequisite is missing?</a></li>
+    </ul>
+  </li>
+  <li><a href="#SENDING-REPORTS">SENDING REPORTS</a>
+    <ul>
+      <li><a href="#Why-did-I-get-an-error-sending-a-test-report-">Why did I get an error sending a test report?</a></li>
+      <li><a href="#Why-didnt-my-test-report-show-up-on-CPAN-Testers-">Why didn&#39;t my test report show up on CPAN Testers?</a></li>
+    </ul>
+  </li>
+  <li><a href="#CPAN-TESTERS">CPAN TESTERS</a>
+    <ul>
+      <li><a href="#Where-can-I-find-out-more-about-CPAN-Testers-">Where can I find out more about CPAN Testers?</a></li>
+      <li><a href="#Where-can-I-find-statistics-about-reports-sent-to-CPAN-Testers-">Where can I find statistics about reports sent to CPAN Testers?</a></li>
+      <li><a href="#How-do-I-make-sure-I-get-credit-for-my-test-reports-">How do I make sure I get credit for my test reports?</a></li>
+    </ul>
+  </li>
+  <li><a href="#SEE-ALSO">SEE ALSO</a></li>
+  <li><a href="#AUTHOR">AUTHOR</a></li>
+  <li><a href="#COPYRIGHT-AND-LICENSE">COPYRIGHT AND LICENSE</a></li>
+</ul>
+
+<h1 id="NAME">NAME</h1>
+
+<p>CPAN::Reporter::FAQ - Answers and tips for using CPAN::Reporter</p>
+
+<h1 id="VERSION">VERSION</h1>
+
+<p>version 1.2006</p>
+
+<h1 id="REPORT-GRADES">REPORT GRADES</h1>
+
+<h2 id="Why-did-I-receive-a-report-">Why did I receive a report?</h2>
+
+<p>Historically, CPAN Testers was designed to have each tester send a copy of reports to authors. This philosophy changed in September 2008 and CPAN Testers tools were updated to no longer copy authors, but some testers may still be using an older version.</p>
+
+<h2 id="Why-was-a-report-sent-if-a-prerequisite-is-missing-">Why was a report sent if a prerequisite is missing?</h2>
+
+<p>As of CPAN::Reporter 0.46, FAIL and UNKNOWN reports with unsatisfied prerequisites are discarded. Earlier versions may have sent these reports out by mistake as either an NA or UNKNOWN report.</p>
+
+<p>PASS reports are not discarded because it may be useful to know when tests passed despite a missing prerequisite. NA reports are sent because information about the lack of support for a platform is relevant regardless of prerequisites.</p>
+
+<h1 id="SENDING-REPORTS">SENDING REPORTS</h1>
+
+<h2 id="Why-did-I-get-an-error-sending-a-test-report-">Why did I get an error sending a test report?</h2>
+
+<p>Historically, test reports were sent via ordinary email. The most common reason for errors sending a report back then was that many Internet Service Providers (ISP&#39;s) would block outbound SMTP (email) connections as part of their efforts to fight spam.</p>
+
+<p>Since 2010, test reports are sent to the CPAN Testers Metabase over HTTPS. The most common reason for failures are systems which upgraded CPAN::Reporter but are still configured to use the deprecated and unsupported email system instead of Metabase for transport.</p>
+
+<p>If you are unsure which transport mechanism you&#39;re using, look for the <code>transport</code> rule in the <code>.cpanreporter/config.ini</code> file, in the user&#39;s home directory. See <a href="../../../../cpan/build/CPAN-Reporter-1.2006-wXxjnP/blib/lib/CPAN/Reporter/Config.html">CPAN::Reporter::Config</a> for details on how to set the <code>transport</code> option for Metabase.</p>
+
+<p>Other errors could be caused by the absence of the <code>.cpanreporter/metabase_id.json</code> file in the user&#39;s home directory. This file should be manually created prior to sending any reports, via the <code>metabase-profile</code> program. Simply run it and fill in the information accordingly, and it will create the <code>metabase_id.json</code> file for you. Move that file to your <code>.cpanreporter</code> directory and you&#39;re all set.</p>
+
+<p>Finally, lack of Internet connection or firewall filtering will prevent the report from reaching the CPAN Testers servers. If you are experiencing HTTPS issues or messages complaining about SSL modules, try installing the <a href="../../../../lib/LWP/Protocol/https.html">LWP::Protocol::https</a> module and trying again. If all fails, you may still change the transport uri to use HTTP instead of HTTPS, though this is <i>not</i> recommended.</p>
+
+<h2 id="Why-didnt-my-test-report-show-up-on-CPAN-Testers-">Why didn&#39;t my test report show up on CPAN Testers?</h2>
+
+<p>There is a delay between the time reports are sent to the Metabase and when they they appear on the CPAN Testers website. There is a further delay before summary statistics appear on search.cpan.org. If your reports do not appear after 24 hours, please contact the cpan-testers-discuss email list (<a href="http://lists.perl.org/list/cpan-testers-discuss.html">http://lists.perl.org/list/cpan-testers-discuss.html</a>) or join the <code><span class="comment">#cpantesters-discuss</span>
+</code> IRC channel on <code>irc.perl.org</code>.</p>
+
+<h1 id="CPAN-TESTERS">CPAN TESTERS</h1>
+
+<h2 id="Where-can-I-find-out-more-about-CPAN-Testers-">Where can I find out more about CPAN Testers?</h2>
+
+<p>A good place to start is the CPAN Testers Wiki: <a href="http://wiki.cpantesters.org/">http://wiki.cpantesters.org/</a></p>
+
+<h2 id="Where-can-I-find-statistics-about-reports-sent-to-CPAN-Testers-">Where can I find statistics about reports sent to CPAN Testers?</h2>
+
+<p>CPAN Testers statistics are compiled at <a href="http://stats.cpantesters.org/">http://stats.cpantesters.org/</a></p>
+
+<h2 id="How-do-I-make-sure-I-get-credit-for-my-test-reports-">How do I make sure I get credit for my test reports?</h2>
+
+<p>To get credit in the statistics, use the same Metabase profile file and the same email address wherever you run tests.</p>
+
+<h1 id="SEE-ALSO">SEE ALSO</h1>
+
+<ul>
+
+<li><p><a>CPAN::Testers</a></p>
+
+</li>
+<li><p><a href="../../../../cpan/build/CPAN-Reporter-1.2006-wXxjnP/blib/lib/CPAN/Reporter.html">CPAN::Reporter</a></p>
+
+</li>
+<li><p><a href="../../../../site/lib/Test/Reporter.html">Test::Reporter</a></p>
+
+</li>
+</ul>
+
+<h1 id="AUTHOR">AUTHOR</h1>
+
+<p>David Golden &lt;dagolden@cpan.org&gt;</p>
+
+<h1 id="COPYRIGHT-AND-LICENSE">COPYRIGHT AND LICENSE</h1>
+
+<p>This software is Copyright (c) 2006 by David Golden.</p>
+
+<p>This is free software, licensed under:</p>
+
+<pre><code>  The Apache License, Version 2.0, January 2004</code></pre>
+
+
+</body>
+
+</html>
+
+

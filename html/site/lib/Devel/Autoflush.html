@@ -1,0 +1,99 @@
+<?xml version="1.0" ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<!-- saved from url=(0017)http://localhost/ -->
+<script language="JavaScript" src="../../../displayToc.js"></script>
+<script language="JavaScript" src="../../../tocParas.js"></script>
+<script language="JavaScript" src="../../../tocTab.js"></script>
+<link rel="stylesheet" type="text/css" href="../../../scineplex.css">
+<title></title>
+<link rel="stylesheet" href="../../../Active.css" type="text/css" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rev="made" href="mailto:" />
+</head>
+
+<body>
+
+
+
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#VERSION">VERSION</a></li>
+  <li><a href="#SYNOPSIS">SYNOPSIS</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
+  <li><a href="#BUGS">BUGS</a></li>
+  <li><a href="#SEE-ALSO">SEE ALSO</a></li>
+  <li><a href="#AUTHOR">AUTHOR</a></li>
+  <li><a href="#COPYRIGHT-AND-LICENSE">COPYRIGHT AND LICENSE</a></li>
+</ul>
+
+<h1 id="NAME">NAME</h1>
+
+<p>Devel::Autoflush - Set autoflush from the command line</p>
+
+<h1 id="VERSION">VERSION</h1>
+
+<p>This documentation describes version 0.05.</p>
+
+<h1 id="SYNOPSIS">SYNOPSIS</h1>
+
+<pre><code>  perl -MDevel::Autoflush Makefile.PL</code></pre>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
+<p>This module is a hack to set autoflush for STDOUT and STDERR from the command line or from <code>PERL5OPT</code> for code that needs it but doesn&#39;t have it.</p>
+
+<p>This often happens when prompting:</p>
+
+<pre><code>   <span class="comment"># guess.pl</span>
+   <span class="keyword">print</span> <span class="string">"Guess a number: "</span><span class="operator">;</span>
+   <span class="keyword">my</span> <span class="variable">$n</span> <span class="operator">=</span> <span class="operator">&lt;</span><span class="variable">STDIN</span><span class="operator">&gt;;</span>
+</code></pre>
+
+<p>As long as the output is going to a terminal, the prompt is flushed when STDIN is read. However, if the output is being piped, the print statement will not automatically be flushed, no prompt will be seen and the program will silently appear to hang while waiting for input. This might happen with &#39;tee&#39;:</p>
+
+<pre><code>   $ perl guess.pl | tee capture.out</code></pre>
+
+<p>Use Devel::Autoflush to work around this:</p>
+
+<pre><code>   $ perl -MDevel::Autoflush guess.pl | tee capture.out</code></pre>
+
+<p>Or set it in <code>PERL5OPT</code>:</p>
+
+<pre><code>   $ export PERL5OPT=-MDevel::Autoflush
+   $ perl guess.pl | tee capture.out</code></pre>
+
+<h1 id="BUGS">BUGS</h1>
+
+<p>Please report any bugs or feature using the CPAN Request Tracker. Bugs can be submitted through the web interface at <a href="http://rt.cpan.org/Dist/Display.html?Queue=Devel-Autoflush">http://rt.cpan.org/Dist/Display.html?Queue=Devel-Autoflush</a></p>
+
+<p>When submitting a bug or request, please include a test-file or a patch to an existing test-file that illustrates the bug or desired feature.</p>
+
+<h1 id="SEE-ALSO">SEE ALSO</h1>
+
+<ul>
+
+<li><p><a>CPANPLUS::Internals::Utils::Autoflush</a> -- same idea but STDOUT only and only available as part of the full CPANPLUS distribution</p>
+
+</li>
+</ul>
+
+<h1 id="AUTHOR">AUTHOR</h1>
+
+<p>David A. Golden (DAGOLDEN)</p>
+
+<h1 id="COPYRIGHT-AND-LICENSE">COPYRIGHT AND LICENSE</h1>
+
+<p>Copyright (c) 2008-2009 by David A. Golden</p>
+
+<p>Licensed under the Apache License, Version 2.0 (the &quot;License&quot;); you may not use this file except in compliance with the License. You may obtain a copy of the License at <a href="http://www.apache.org/licenses/LICENSE-2.0">http://www.apache.org/licenses/LICENSE-2.0</a></p>
+
+<p>Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an &quot;AS IS&quot; BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.</p>
+
+
+</body>
+
+</html>
+
+

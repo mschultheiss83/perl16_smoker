@@ -1,0 +1,84 @@
+<?xml version="1.0" ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<!-- saved from url=(0017)http://localhost/ -->
+<script language="JavaScript" src="../../../../displayToc.js"></script>
+<script language="JavaScript" src="../../../../tocParas.js"></script>
+<script language="JavaScript" src="../../../../tocTab.js"></script>
+<link rel="stylesheet" type="text/css" href="../../../../scineplex.css">
+<title></title>
+<link rel="stylesheet" href="../../../../Active.css" type="text/css" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rev="made" href="mailto:" />
+</head>
+
+<body>
+
+
+
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
+</ul>
+
+<h1 id="NAME">NAME</h1>
+
+<p>CPAN::SQLite::Util - export some common data structures used by CPAN::SQLite::*</p>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
+<p>This module exports some common data structures used by other <i>CPAN::Search::Lite::*</i> modules. At present these are</p>
+
+<ul>
+
+<li><p><code>%chaps</code></p>
+
+<p>This is hash whose keys are the CPAN chapter ids with associated values being the corresponding chapter descriptions.</p>
+
+</li>
+<li><p><code>$dslip</code></p>
+
+<p>This contains a description of the meaning of the various <code>dslip</code> codes.</p>
+
+</li>
+<li><p><code>$table_id</code></p>
+
+<p>This is a hash reference whose keys are the tables used and whose values are the associated primary keys.</p>
+
+</li>
+<li><p><code>$full_id</code></p>
+
+<p>This is a hash reference whose keys are the primary keys of the tables and whose values are the associated fully qualified primary keys (ie, with the table name prepended).</p>
+
+</li>
+<li><p><code>$mode_info</code></p>
+
+<p>This is a hash reference whose keys are the allowed modes of <i>CPAN::Search::Lite::Query</i> and whose associated values are hash references with keys <code>id</code>, <code>name</code>, and <code>text</code> describing what columns to use for that key.</p>
+
+</li>
+<li><p><code>$query_info</code></p>
+
+<p>This is a hash reference whose purpose is to provide shortcuts to making queries using <i>CPAN::Search::Lite::Query</i>. The keys of this reference is the shortcut name, and the associated value is a hash reference specifying the required <i>mode</i> and <i>type</i> keys.</p>
+
+</li>
+<li><p><code>vcmp</code></p>
+
+<p>This routine, used as</p>
+
+<pre><code>  <span class="keyword">if</span> <span class="operator">(</span><span class="variable">vcmp</span><span class="operator">(</span><span class="variable">$v1</span><span class="operator">,</span> <span class="variable">$v2</span><span class="operator">)</span> <span class="operator">&gt;</span> <span class="number">0</span><span class="operator">)</span> <span class="operator">{</span>
+    <span class="keyword">print</span> <span class="string">"</span><span class="variable">$v1</span><span class="string"> is higher than </span><span class="variable">$v2</span><span class="string">\n"</span><span class="operator">;</span>
+  <span class="operator">}</span>
+</code></pre>
+
+<p>is used to compare two versions, and returns 1/0/-1 if the first argument is considered higher/equal/lower than the second. It uses <code>Sort::Versions</code>.</p>
+
+</li>
+</ul>
+
+
+</body>
+
+</html>
+
+

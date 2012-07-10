@@ -1,0 +1,121 @@
+<?xml version="1.0" ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<!-- saved from url=(0017)http://localhost/ -->
+<script language="JavaScript" src="../../../../displayToc.js"></script>
+<script language="JavaScript" src="../../../../tocParas.js"></script>
+<script language="JavaScript" src="../../../../tocTab.js"></script>
+<link rel="stylesheet" type="text/css" href="../../../../scineplex.css">
+<title></title>
+<link rel="stylesheet" href="../../../../Active.css" type="text/css" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rev="made" href="mailto:" />
+</head>
+
+<body>
+
+
+
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#SYNOPSIS">SYNOPSIS</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
+  <li><a href="#DETAILS">DETAILS</a></li>
+  <li><a href="#SEE-ALSO">SEE ALSO</a></li>
+  <li><a href="#AUTHORS">AUTHORS</a></li>
+  <li><a href="#COPYRIGHT">COPYRIGHT</a></li>
+</ul>
+
+<h1 id="NAME">NAME</h1>
+
+<p>CPAN::SQLite::Index - set up or update database tables.</p>
+
+<h1 id="SYNOPSIS">SYNOPSIS</h1>
+
+<pre><code> <span class="keyword">my</span> <span class="variable">$index</span> <span class="operator">=</span> <span class="variable">CPAN::SQLite::Index</span><span class="operator">-&gt;</span><span class="variable">new</span><span class="operator">(</span><span class="string">setup</span> <span class="operator">=&gt;</span> <span class="number">1</span><span class="operator">);</span>
+ <span class="variable">$index</span><span class="operator">-&gt;</span><span class="variable">index</span><span class="operator">();</span>
+</code></pre>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
+<p>This is the main module used to set up or update the database tables used to store information from the CPAN and ppm indices. The creation of the object</p>
+
+<pre><code> <span class="keyword">my</span> <span class="variable">$index</span> <span class="operator">=</span> <span class="variable">CPAN::SQLite::Index</span><span class="operator">-&gt;</span><span class="variable">new</span><span class="operator">(</span><span class="variable">%args</span><span class="operator">);</span>
+</code></pre>
+
+<p>accepts two possible arguments:</p>
+
+<ul>
+
+<li><p>setup =&gt; 1</p>
+
+<p>This (optional) argument specifies that the database is being set up. Any existing tables will be dropped.</p>
+
+</li>
+<li><p>reindex =&gt; value</p>
+
+<p>This (optional) argument specifies distribution names that one would like to reindex in an existing database. These may be specified as either a scalar, for a single distribution, or as an array reference for a list of distributions.</p>
+
+</li>
+</ul>
+
+<h1 id="DETAILS">DETAILS</h1>
+
+<p>Calling</p>
+
+<pre><code>  <span class="variable">$index</span><span class="operator">-&gt;</span><span class="variable">index</span><span class="operator">();</span>
+</code></pre>
+
+<p>will start the indexing procedure. Various messages detailing the progress will written to <i>STDOUT</i>, which by default will be captured into a file <i>cpan_sqlite_log.dddddddddd</i>, where the extension is the <code>time</code> that the method was invoked. Error messages are not captured, and will appear in <i>STDERR</i>.</p>
+
+<p>The steps of the indexing procedure are as follows.</p>
+
+<ul>
+
+<li><p>fetch index data</p>
+
+<p>The necessary CPAN index files <i>$CPAN/authors/01mailrc.txt.gz</i>, <i>$CPAN/modules/02packages.details.txt.gz</i>, and <i>$CPAN/modules/03modlist.data.gz</i> will be fetched from the CPAN mirror specified by the <code>$cpan</code> variable at the beginning of <a href="../../../../cpan/build/CPAN-SQLite-0.202-YFPAex/blib/lib/CPAN/SQLite/Index.html">CPAN::SQLite::Index</a>. If you are using this option, it is recommended to use the same CPAN mirror with subsequent updates, to ensure consistency of the database. As well, the information on the locations of the CPAN mirrors used for Template-Toolkit and GeoIP is written.</p>
+
+</li>
+<li><p>get index information</p>
+
+<p>Information from the CPAN indices is extracted through <a href="../../../../cpan/build/CPAN-SQLite-0.202-YFPAex/blib/lib/CPAN/SQLite/Info.html">CPAN::SQLite::Info</a>.</p>
+
+</li>
+<li><p>get state information</p>
+
+<p>Unless the <code>setup</code> argument within the <code>new</code> method of <a href="../../../../cpan/build/CPAN-SQLite-0.202-YFPAex/blib/lib/CPAN/SQLite/Index.html">CPAN::SQLite::Index</a> is specified, this will get information on the state of the database through <a href="../../../../cpan/build/CPAN-SQLite-0.202-YFPAex/blib/lib/CPAN/SQLite/State.html">CPAN::SQLite::State</a>. A comparision is then made between this information and that gathered from the CPAN indices, and if there&#39;s a discrepency in some items, those items are marked for either insertion, updating, or deletion, as appropriate.</p>
+
+</li>
+<li><p>populate the database</p>
+
+<p>At this stage the gathered information is used to populate the database, through <a href="../../../../cpan/build/CPAN-SQLite-0.202-YFPAex/blib/lib/CPAN/SQLite/Populate.html">CPAN::SQLite::Populate</a>, either inserting new items, updating existing ones, or deleting obsolete items.</p>
+
+</li>
+</ul>
+
+<h1 id="SEE-ALSO">SEE ALSO</h1>
+
+<p><a href="../../../../cpan/build/CPAN-SQLite-0.202-YFPAex/blib/lib/CPAN/SQLite/Info.html">CPAN::SQLite::Info</a>, <a href="../../../../cpan/build/CPAN-SQLite-0.202-YFPAex/blib/lib/CPAN/SQLite/State.html">CPAN::SQLite::State</a>, <a href="../../../../cpan/build/CPAN-SQLite-0.202-YFPAex/blib/lib/CPAN/SQLite/Populate.html">CPAN::SQLite::Populate</a>, and <a href="../../../../cpan/build/CPAN-SQLite-0.202-YFPAex/blib/lib/CPAN/SQLite/Util.html">CPAN::SQLite::Util</a>. Development takes place on the CPAN-SQLite project at <a href="http://sourceforge.net/projects/cpan-search/">http://sourceforge.net/projects/cpan-search/</a>.</p>
+
+<h1 id="AUTHORS">AUTHORS</h1>
+
+<p>Randy Kobes (passed away on September 18, 2010)</p>
+
+<p>Serguei Trouchelle &lt;stro@cpan.org&gt;</p>
+
+<h1 id="COPYRIGHT">COPYRIGHT</h1>
+
+<p>Copyright 2006 by Randy Kobes &lt;r.kobes@uwinnipeg.ca&gt;.</p>
+
+<p>Copyright 2011 by Serguei Trouchelle &lt;stro@cpan.org&gt;.</p>
+
+<p>Use and redistribution are under the same terms as Perl itself.</p>
+
+
+</body>
+
+</html>
+
+
