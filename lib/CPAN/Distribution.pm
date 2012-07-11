@@ -185,9 +185,15 @@ sub color_cmd_tmps {
     # warn "color_cmd_tmps $depth $color " . $self->id; # sleep 1;
     my $prereq_pm = $self->prereq_pm;
     if (defined $prereq_pm) {
+        require Module::Corelist;
+        my $core = $Module::CoreList::version{$]};
       PREREQ: for my $pre (keys %{$prereq_pm->{requires}||{}},
                            keys %{$prereq_pm->{build_requires}||{}}) {
             next PREREQ if $pre eq "perl";
+            if ( my $core_ver = $core->{$pre} ) {
+                my $req_ver = $prereq_pm->{requires}{$pre} || $prereq_pm->{build_requires}{$pre} || 0;
+                next PREREQ if $core_ver > $req_ver;
+            }
             my $premo;
             unless ($premo = CPAN::Shell->expand("Module",$pre)) {
                 $CPAN::Frontend->mywarn("prerequisite module[$pre] not known\n");
