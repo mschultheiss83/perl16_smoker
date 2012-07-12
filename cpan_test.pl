@@ -1,6 +1,10 @@
 use strict;
 use warnings;
 
+BEGIN{
+    $ENV{PERL_JSON_BACKEND} = "JSON::XS";
+    $ENV{PERL_YAML_BACKEND} = "YAML::XS";
+}
 use CPAN;
 CPAN::HandleConfig->load;
 $CPAN::Config->{test_report} = 1;
