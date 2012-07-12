@@ -6,3 +6,5 @@
 /cpan/cpan_sqlite_log.*
 /cpan/cpandb.sql
 /cpan/histfile
+/html/*
+/lib/perllocal.pod
