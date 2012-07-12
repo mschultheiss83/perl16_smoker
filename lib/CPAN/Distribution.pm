@@ -2632,7 +2632,7 @@ sub unsat_prereq {
         } else {
             if (CPAN::_sqlite_running()) {
                 CPAN::Index->reload;
-                $CPAN::SQLite->search("CPAN::Module",$need_module);
+                $CPAN::SQLite->set("CPAN::Module",$need_module);
             }
             $nmo = $CPAN::META->instance("CPAN::Module",$need_module);
             next if $nmo->uptodate;
