@@ -192,7 +192,7 @@ sub color_cmd_tmps {
             next PREREQ if $pre eq "perl";
             if ( my $core_ver = $core->{$pre} ) {
                 my $req_ver = $prereq_pm->{requires}{$pre} || $prereq_pm->{build_requires}{$pre} || 0;
-                next PREREQ if $core_ver > $req_ver;
+                next PREREQ if CPAN::Version->vgt( $core_ver, $req_ver );
             }
             my $premo;
             unless ($premo = CPAN::Shell->expand("Module",$pre)) {
