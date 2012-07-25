@@ -33,3 +33,8 @@ comment: "PJFL will happily force his tests to pass on win32 by skipping everyth
 match:
     distribution: "^PJFL/"
 disabled: 1
+---
+comment: "catalyst stuff won't work right now because Test::TCP"
+match:
+    distribution: "/Catalyst"
+disabled: 1
