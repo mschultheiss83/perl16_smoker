@@ -36,5 +36,20 @@ disabled: 1
 ---
 comment: "needs some external deps"
 match:
-    distribution: "/SNMP-Class"
+    distribution: "/SNMP-"
+disabled: 1
+---
+comment: "currently barfs the hdd full"
+match:
+    distribution: "Test-RedisServer-"
+disabled: 1
+---
+comment: "250 mb dist"
+match:
+    distribution: "Lingua-StanfordCoreNLP-"
+disabled: 1
+---
+comment: "maybe later, does seem to have issues with lack of deps"
+match:
+    distribution: "/Jifty-"
 disabled: 1
