@@ -2375,7 +2375,6 @@ sub prefs {
 $filler1 D i s t r o P r e f s $filler1
 $filler2 $bs $filler2
 ");
-            $CPAN::Frontend->mysleep(1);
             return $self->{prefs};
         }
     }
