@@ -53,3 +53,38 @@ comment: "maybe later, does seem to have issues with lack of deps"
 match:
     distribution: "/Jifty-"
 disabled: 1
+---
+comment: "https://gist.github.com/c6b58812922625b8d9c5"
+match:
+    distribution: "/Toader-0.4.0"
+disabled: 1
+---
+comment: "https://rt.cpan.org/Ticket/Display.html?id=78783"
+match:
+    distribution: "/WebDAO-2.08"
+disabled: 1
+---
+comment: "https://rt.cpan.org/Ticket/Display.html?id=78784"
+match:
+    distribution: "/NIST-NVD-"
+disabled: 1
+---
+comment: "https://rt.cpan.org/Ticket/Display.html?id=78786"
+match:
+    distribution: "/Finance-Bank-IE-0.27"
+disabled: 1
+---
+comment: "https://rt.cpan.org/Ticket/Display.html?id=78787"
+match:
+    distribution: "/XSDSQL"
+disabled: 1
+---
+comment: "sharyanto is a pro at getting circular dependencies"
+match:
+    distribution: "^SHARYANTO/"
+disabled: 1
+---
+comment: "out of memory error during unpacking"
+match:
+    distribution: "/Lingua-JA-WordNet"
+disabled: 1
