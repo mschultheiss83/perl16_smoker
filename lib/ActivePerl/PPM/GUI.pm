@@ -1887,7 +1887,7 @@ sub show_prefs_dialog {
 	    $rsugbox->set("Select from list ...");
 	    $rsugbox->configure(-values => [@repos], -state => "readonly");
 	    my $rsugbox_cmd = sub {
-		return unless defined(%PPM::Repositories::Repositories);
+		return unless (scalar keys %PPM::Repositories::Repositories);
 		return unless $sug_repo_var;
 		$name_var = $sug_repo_var;
 		$name_var =~ s/ ::.*$//;
